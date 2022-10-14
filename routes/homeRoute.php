@@ -27,11 +27,17 @@
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");
     });
+    $router->get("/registration", function()
+    {
+        ob_start();
+            require_once("./layouts/views/home/registration.php");
+        $body = ob_get_clean();
+        require_once("./layouts/shared/template.php");
+    });
 
     $router->get("/about", function()
     {
         ob_start();
-            echo $_GET["id"];
             require_once("./layouts/views/home/about.php");
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");
