@@ -30,6 +30,7 @@
       
         private function formatRoute($route)
         {
+            $route = rtrim($route,preg_replace("/[^0-9]/",'',$route));
             $result = rtrim($route, '/');
             if ($result === '')
             {
