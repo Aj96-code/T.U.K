@@ -6,7 +6,7 @@
                     <div class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
                         <div style="max-width: 350px;">
                             <h2 class="text-uppercase fw-bold">tuk - the unshakeable king, be the king of clothing</h2>
-                            <p class="my-3">A lion is called a "king of beasts" obviously for a reason</p>
+                            <p class="my-3 fs-4 fw-semibold">A lion is called a "king of beasts" obviously for a reason</p>
                         </div>
                     </div>
                     <div class="col-md-6">
