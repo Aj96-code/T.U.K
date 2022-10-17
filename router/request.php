@@ -35,13 +35,13 @@
       
         public function getBody()
         {
-          if($this->requestMethod === "GET")
+          if($this-> $_REQUEST === "GET")
           {
             return;
           }
       
       
-          if ($this->requestMethod == "POST")
+          if ($this->$_REQUEST == "POST")
           {
       
             $body = array();

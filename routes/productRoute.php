@@ -2,6 +2,7 @@
 
     $router->get("/products", function()
     {
+        $title = "Products";
         ob_start();
             require_once("./layouts/views/product/product-list.php");
         $body = ob_get_clean();
@@ -10,6 +11,7 @@
 
     $router->post("/products", function()
     {
+        $title = "Products";
         ob_start();
         
             require_once("./layouts/views/product/product-list.php");
@@ -19,6 +21,7 @@
 
     $router->get("/product", function()
     {
+        $title = "Product";
         ob_start();
             require_once("./layouts/views/product/product.php");
         $body = ob_get_clean();
@@ -27,6 +30,8 @@
 
     $router->get("/product-form", function()
     {
+        
+        $title = "Add Product";
         ob_start();
             require_once("./layouts/views/product/product-form.php");
         $body = ob_get_clean();
