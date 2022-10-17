@@ -13,10 +13,8 @@
             <p class="fs-5 fw-semibold me-lg-2 my-lg-2 my-md-2 mx-md-1">Sort By</p>
             <div class="dropdown"><button class="btn btn-light dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button">Dropdown </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">First Item</a>
-                    <a class="dropdown-item" href="#">Second Item</a>
                     <?php while($obj = $result->fetch(PDO::FETCH_ASSOC)){?>
-                    <a class="dropdown-item" href="#"><?php echo $obj["type"]?></a>
+                    <a class="dropdown-item" href="/products?id=<?php echo $obj["id"]?>"><?php echo $obj["type"]?></a>
                     <?php }?>
                 </div>
             </div>
