@@ -8,7 +8,7 @@
                         </div>
                     </div>
                     <div class="row d-flex justify-content-center">
-                        <div class="col-md-11 col-lg-8 col-xl-4 col-xxl-8">
+                        <div class="col-md-11 col-lg-8 col-xl-8 col-xxl-8">
                             <div class="card mb-5">
                                 <div class="card-body d-flex flex-column align-items-center">
                                     <div class="bs-icon-xl bs-icon-circle bs-icon-primary text-bg-dark bs-icon my-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person">
