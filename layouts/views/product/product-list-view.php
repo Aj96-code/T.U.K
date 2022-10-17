@@ -1,5 +1,10 @@
 <h1 class="text-center mt-2">Products</h1>
 <div class="container mt-5 mb-5">
+    <div class ="d-grid">
+        <a class="btn btn-outline-dark fw-semibold  mb-2" href="/product-form">
+            Add <i class="bi bi-plus-circle "></i>
+        </a>
+    </div>
     <table class="table table-light table-striped table-hover">
         <thead class="table-dark">
             <tr>
@@ -8,9 +13,6 @@
                 <th scope="col" class="text-center">Type</th>
                 <th scope="col" class="text-center">
                     Action
-                    <a class="btn btn-outline-light fw-semibold fs-4" href="/product-form">
-                        Add <i class="bi bi-plus-circle"></i>
-                    </a>
                 </th>
             </tr>
         </thead>

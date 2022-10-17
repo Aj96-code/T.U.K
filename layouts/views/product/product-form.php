@@ -21,6 +21,14 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2"><label class="col-form-label ms-md-3" for="type">Type:&nbsp;</label></div>
+                        <div class="col-md-7"><input class="form-control my-md-1" type="text" name="type"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mx-md-5 my-md-2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2"><label class="col-form-label ms-md-3" for="size">Size:&nbsp;</label></div>
                         <div class="col-md-7"><input class="form-control my-md-1" type="text" name="size"></div>
                     </div>
                 </div>
@@ -28,8 +36,8 @@
             <div class="mx-md-5 my-md-2">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-2"><label class="col-form-label ms-md-3" for="type">Size:&nbsp;</label></div>
-                        <div class="col-md-7"><input class="form-control my-md-1" type="text" name="size"></div>
+                        <div class="col-md-2"><label class="col-form-label ms-md-3" for="inStock">In Stock:&nbsp;&nbsp;</label></div>
+                        <div class="col-md-7"><input class="form-control my-md-1" type="text" name="inStock"></div>
                     </div>
                 </div>
             </div>

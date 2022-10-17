@@ -2,7 +2,7 @@
         <div class="text-start d-flex d-md-flex flex-row justify-content-center align-items-center align-content-center flex-wrap mx-xl-5 my-xl-4 mt-xl-5">
             <div class="text-center text-md-start d-flex d-md-inline-flex d-xl-flex flex-column justify-content-start align-items-center flex-md-column align-items-md-center align-items-xl-start ms-xl-auto px-3 ps-3 py-md-5 py-lg-5 py-4 px-lg-5 px-md-4 my-md-5 mx-md-4 my-lg-5 mx-lg-0 my-5 hero-content pb-xl-5 pt-xl-5 ps-xl-5 pe-xl-5 ms-xl-0 me-md-5 me-xl-4 mb-xl-4 mt-xl-5 ms-xxl-5 me-lg-0" style="padding-left: 37px;padding-right: 37px;padding-bottom: 26px;padding-top: 27px;">
                 <h1 class="display-6 fw-bold text-md-start me-sm-0 pe-sm-5 pe-md-0 mb-md-1 pb-md-0">One stop shop, suited<br>for all you clothing needs</h1>
-                <p>From the store to your door, easy shopping</p><button class="btn btn-dark" type="button">Shop now</button>
+                <p>From the store to your door, easy shopping</p><a class="btn btn-dark" href="/products" type="button">Shop now</a>
             </div>
             <div><img class="img-fluid d-none d-sm-none d-md-inline hero-img mt-md-5 mb-md-5 ps-lg-0 pe-lg-5 me-lg-0 me-md-0 pe-md-3 ms-md-5 ms-xl-0 mb-xl-0 mt-xl-0 ms-lg-0 mt-lg-2" src="assets/img/man-with-sunglasses-wearing-white-t-shirt-posing.jpg" width="500px" height="500px"></div>
         </div>
