@@ -38,4 +38,13 @@
         require_once("./layouts/shared/template.php");
     });
 
+    $router->get("/product-list-view", function()
+    {
+        
+        $title = "Products";
+        ob_start();
+            require_once("./layouts/views/product/product-list-view.php");
+        $body = ob_get_clean();
+        require_once("./layouts/shared/template.php");
+    });
 ?>

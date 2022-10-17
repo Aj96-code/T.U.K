@@ -1,5 +1,5 @@
 <section>
-        <form class="my-md-3">
+        <form class="my-md-3 mb-4" method="post" action="/product-list-view" enctype="multipart/form-data">
             <h1 class="text-center mb-md-3">Product Form</h1>
             <div class="mx-md-5 my-md-2">
                 <div class="container">
@@ -21,21 +21,15 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2"><label class="col-form-label ms-md-3" for="type">Type:&nbsp;</label></div>
-                        <div class="col-md-7"><input class="form-control my-md-1" type="text" name="typr"></div>
+                        <div class="col-md-7"><input class="form-control my-md-1" type="text" name="size"></div>
                     </div>
                 </div>
             </div>
             <div class="mx-md-5 my-md-2">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-2"><label class="col-form-label ms-md-3" for="size">Size:</label></div>
-                        <div class="col-md-7"><select class="form-select form-select-sm mt-md-1">
-                                <optgroup label="Small">
-                                    <option value="12" selected="">This is item 1</option>
-                                    <option value="13">This is item 2</option>
-                                    <option value="14">This is item 3</option>
-                                </optgroup>
-                            </select></div>
+                        <div class="col-md-2"><label class="col-form-label ms-md-3" for="type">Size:&nbsp;</label></div>
+                        <div class="col-md-7"><input class="form-control my-md-1" type="text" name="size"></div>
                     </div>
                 </div>
             </div>

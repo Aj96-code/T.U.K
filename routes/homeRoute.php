@@ -20,6 +20,18 @@
             // get the contents and clear the buffer
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");
+    });    
+    $router->post("/", function()
+    {
+        $title = "Home Page";
+        $username = $_POST["email"];
+        // Runs Any php scripts in the html before showing it by starting a buffer
+        ob_start();
+            echo "<h1 class='text-align-center'> Welcome User: $username</h1>";
+            require_once("./layouts/views/home/home.php");
+            // get the contents and clear the buffer
+        $body = ob_get_clean();
+        require_once("./layouts/shared/template.php");
     });
     $router->get("/login", function()
     {

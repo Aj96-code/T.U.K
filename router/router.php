@@ -47,6 +47,7 @@
         private function defaultRequestHandler()
         {
             header("{$this->request->serverProtocol} 404 Not Found");
+           require_once("layouts/shared/404.php");
         }
 
         
@@ -58,6 +59,7 @@
 
             if(is_null($method))
             {
+            
                 $this->defaultRequestHandler();
                 return;
             }
