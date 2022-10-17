@@ -26,4 +26,8 @@ $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
         throw new PDOException($exc->getMessage());
        //throw new PDOException($exc->getMessage()); 
     };
+
+    require_once("db/class/productType.php");
+
+
 ?>

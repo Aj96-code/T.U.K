@@ -1,9 +1,13 @@
 <?php
-
     $router->get("/products", function()
     {
         $title = "Products";
+
         ob_start();
+
+        require_once("./db/conn/conn.php");
+        $productType = new ProductType($pdo);
+        $result = $productType->getTypes();
             require_once("./layouts/views/product/product-list.php");
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");
