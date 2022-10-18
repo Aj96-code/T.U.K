@@ -28,7 +28,7 @@
             
             try 
             {
-                if($this->getUserByUserName($username)["num"] > 0 )
+                if($this->getUserByUserNameAsNum($username)["num"] > 0 )
                     return false;
                 else
                 { 
@@ -51,7 +51,7 @@
 
         }
 
-        function getUserByUserName($username)
+        public function getUserByUserNameAsNum($username)
         {
               try
             {
@@ -59,7 +59,7 @@
                 $stmt = $this->db->prepare($sql);
                 $stmt->bindparam(":username",$username);
                 $stmt->execute();
-                return $stmt->fetch();
+                return $stmt->fetch(PDO::FETCH_ASSOC);
                 
             } catch (PDOException $exc) 
             {
@@ -67,6 +67,24 @@
                 return false;
             } 
         }
+
+       public function getUserByUsername($username)
+       {
+
+              try
+            {
+                $sql = "SELECT * FROM user WHERE username = :username";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindparam(":username",$username);
+                $stmt->execute();
+                return $stmt->fetch(PDO::FETCH_ASSOC);
+                
+            } catch (PDOException $exc) 
+            {
+                echo $exc->getMessage();
+                return false;
+            } 
+       }
 
         public function getUser($username, $password)
         {
@@ -78,7 +96,7 @@
                 $stmt->bindparam(":username", $username);
                 $stmt->bindparam(":password", $password);
                 $stmt->execute();
-                return $stmt->fetch();
+                return $stmt->fetch(PDO::FETCH_ASSOC);
             } catch (PDOException $exc) 
             {
                 echo $exc->getMessage();

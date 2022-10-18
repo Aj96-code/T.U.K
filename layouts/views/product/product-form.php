@@ -20,8 +20,18 @@
             <div class="mx-md-5 my-md-2">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-2"><label class="col-form-label ms-md-3" for="type">Type:&nbsp;</label></div>
-                        <div class="col-md-7"><input class="form-control my-md-1" type="text" name="type"></div>
+                        <div class="col-md-2">
+                            <label class="col-form-label ms-md-3" for="type">Type:&nbsp;</label>
+                        </div>
+                        <div class="col-md-7">
+                            <select id="type" name="type" class="form-select form-select-sm my-md-1">
+                                <?php while($obj = $result->fetch(PDO::FETCH_ASSOC)){?>
+                                    <option value=<?php echo $obj["id"];?>>
+                                    <?php echo ucfirst($obj["type"]);?>
+                                    </option> 
+                                <?php }?>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -58,7 +68,9 @@
                 </div>
             </div>
             <div class="mx-md-0">
-                <div class="container d-grid px-md-5"><button class="btn btn-dark fw-semibold mx-md-5 my-md-2 ms-md-0" type="button">Save</button></div>
+                <div class="container d-grid px-md-5">
+                    <button name="submit" class="btn btn-dark fw-semibold mx-md-5 my-md-2 ms-md-0" type="submit">Save</button>
+                </div>
             </div>
         </form>
     </section>

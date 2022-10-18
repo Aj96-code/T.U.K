@@ -1,6 +1,6 @@
 
 <?php 
-    class ProductType
+ class ProductType
     {
         private $db;
         
