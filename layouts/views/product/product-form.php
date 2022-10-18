@@ -1,5 +1,5 @@
 <section>
-        <form class="my-md-3 mb-4" method="post" action="/product-list-view" enctype="multipart/form-data">
+        <form class="my-md-3 mb-4" method="post" action="/product-upload" enctype="multipart/form-data">
             <h1 class="text-center mb-md-3">Product Form</h1>
             <div class="mx-md-5 my-md-2">
                 <div class="container">

@@ -30,7 +30,7 @@
         {
             try
             {
-                $sql = "INSERT INTO product(name,detail,price,color,image,
+                $sql = "INSERT INTO `product`(name,detail,price,color,image,
                         product_type_id,product_size_id,in_stock)
                         VALUES(:name,:detail,:price,:color,:image,
                             :productType,:productSize,:inStock)";
