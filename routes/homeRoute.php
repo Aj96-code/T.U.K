@@ -16,6 +16,12 @@
         $title = "Home Page";
         // Runs Any php scripts in the html before showing it by starting a buffer
         ob_start();
+            $result = getProductTypeResult();
+            $productTypes = array();
+            while($obj = $result->fetch(PDO::FETCH_ASSOC))
+            {
+                array_push($productTypes,$obj);
+            }
             require_once("./layouts/views/home/home.php");
             // get the contents and clear the buffer
         $body = ob_get_clean();
@@ -27,6 +33,12 @@
         $username = $_POST["email"];
         // Runs Any php scripts in the html before showing it by starting a buffer
         ob_start();
+            $result = getProductTypeResult();
+            $productTypes = array();
+            while($obj = $result->fetch(PDO::FETCH_ASSOC))
+            {
+                array_push($productTypes,$obj);
+            }
             echo "<h1 class='text-align-center'> Welcome User: $username</h1>";
             require_once("./layouts/views/home/home.php");
             // get the contents and clear the buffer

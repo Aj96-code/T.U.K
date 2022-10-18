@@ -5,9 +5,7 @@
 
         ob_start();
 
-        require_once("./db/conn/conn.php");
-        $productType = new ProductType($pdo);
-        $result = $productType->getTypes();
+        $result = getProductTypeResult();
             require_once("./layouts/views/product/product-list.php");
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");
@@ -17,7 +15,7 @@
     {
         $title = "Products";
         ob_start();
-        
+        $result = getProductTypeResult();
             require_once("./layouts/views/product/product-list.php");
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");
@@ -25,11 +23,8 @@
     $router->get("/products?id=", function()
     {
         $title = "Product";
-        echo $_GET["id"];
         ob_start();
-        require_once("./db/conn/conn.php");
-        $productType = new ProductType($pdo);
-        $result = $productType->getTypes();
+        $result = getProductTypeResult();
             require_once("./layouts/views/product/product-list.php");
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");

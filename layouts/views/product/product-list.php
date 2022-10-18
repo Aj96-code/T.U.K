@@ -11,10 +11,10 @@
         ?>
         <div class="container d-flex justify-content-md-end align-items-md-center">
             <p class="fs-5 fw-semibold me-lg-2 my-lg-2 my-md-2 mx-md-1">Sort By</p>
-            <div class="dropdown"><button class="btn btn-light dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button">Dropdown </button>
+            <div class="dropdown"><button class="btn btn-light dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button">Type</button>
                 <div class="dropdown-menu">
                     <?php while($obj = $result->fetch(PDO::FETCH_ASSOC)){?>
-                    <a class="dropdown-item" href="/products?id=<?php echo $obj["id"]?>"><?php echo $obj["type"]?></a>
+                    <a class="dropdown-item" href="/products?id=<?php echo $obj["id"]?>"><?php echo ucfirst($obj["type"])?></a>
                     <?php }?>
                 </div>
             </div>

@@ -23,9 +23,10 @@
                     <div class="card d-inline-flex justify-content-start align-items-end collection">
                         <div class="card-body d-md-flex flex-md-row me-lg-0 pe-lg-0" data-aos="fade-down" data-aos-duration="950" data-aos-delay="50">
                             <div class="d-sm-grid d-md-flex justify-content-evenly my-sm-auto flex-md-column me-md-4 pe-md-0">
-                                <h3 class="text-nowrap text-center">Get what you need <br>to look professional&nbsp;&nbsp;</h3><button class="btn btn-outline-dark mt-sm-3 mt-4 ps-3 ms-sm-0 mb-3 ms-5" type="button">Show more&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right ps-0 ms-3" style="font-size: 22px;">
+                                <h3 class="text-nowrap text-center">Get what you need <br>to look professional&nbsp;&nbsp;</h3>
+                                <a class="btn btn-outline-dark mt-sm-3 mt-4 ps-3 ms-sm-0 mb-3 ms-5" href ="<?php echo getHrefProductsIdLink($productTypes[0])?>" type="button">Show more&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right ps-0 ms-3" style="font-size: 22px;">
                                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                                    </svg></button>
+                                    </svg></a>
                             </div>
                             <div><img class="img-fluid card-img pe-md-3" src="assets/img/men-s-formal-wear-collection.jpg"></div>
                         </div>
@@ -39,9 +40,10 @@
                     <div class="card d-inline-flex justify-content-start align-items-end collection">
                         <div class="card-body d-md-flex flex-md-row" data-aos="fade-down" data-aos-duration="950" data-aos-delay="50">
                             <div class="d-sm-grid d-md-flex justify-content-evenly my-sm-auto flex-md-column me-md-4 pe-md-0">
-                                <h3 class="text-nowrap text-center">Get what you need <br>to feel Comfortable</h3><button class="btn btn-outline-dark mt-sm-3 mt-4 ps-3 ms-sm-0 mb-3 ms-5" type="button">Show more&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right ps-0 ms-3" style="font-size: 22px;">
+                                <h3 class="text-nowrap text-center">Get what you need <br>to feel Comfortable</h3>
+                                <a class="btn btn-outline-dark mt-sm-3 mt-4 ps-3 ms-sm-0 mb-3 ms-5" href="<?php echo getHrefProductsIdLink($productTypes[1]) ?>" type="button">Show more&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right ps-0 ms-3" style="font-size: 22px;">
                                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                                    </svg></button>
+                                    </svg></a>
                             </div>
                             <div><img class="img-fluid card-img" src="assets/img/fashion-polo-shirt-men.jpg"></div>
                         </div>
@@ -55,9 +57,10 @@
                     <div class="card d-inline-flex justify-content-start align-items-end collection">
                         <div class="card-body d-md-flex flex-md-row pe-lg-3 me-lg-2" data-aos="fade-down" data-aos-duration="950" data-aos-delay="50">
                             <div class="d-sm-grid d-md-flex justify-content-evenly my-sm-auto flex-md-column me-md-4 pe-md-0">
-                                <h3 class="text-nowrap text-center">Get the accessories<br>&nbsp; you need today</h3><button class="btn btn-outline-dark mt-sm-3 mt-4 ps-3 ms-sm-0 mb-3 ms-5" type="button">Show more&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right ps-0 ms-3" style="font-size: 22px;">
+                                <h3 class="text-nowrap text-center">Get the accessories<br>&nbsp; you need today</h3>
+                                <a class="btn btn-outline-dark mt-sm-3 mt-4 ps-3 ms-sm-0 mb-3 ms-5" href="<?php echo getHrefProductsIdLink($productTypes[2])?>" type="button">Show more&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right ps-0 ms-3" style="font-size: 22px;">
                                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                                    </svg></button>
+                                    </svg></a>
                             </div>
                             <div><img class="img-fluid card-img" src="assets/img/beautiful-men-fashion-wooden-background.jpg" width="620" height="413"></div>
                         </div>

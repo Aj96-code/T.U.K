@@ -27,6 +27,13 @@ $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
     };
 
     require_once("db/class/productType.php");
+    require_once("db/class/productSize.php");
+    require_once("db/class/product.php");
+    require_once("db/class/user.php");
+    require_once("db/class/userRole.php");
 
+    $user = new User($pdo);
+
+    //$user->insertUser("admin","admin01@gmail.com","password",1);
 
 ?>

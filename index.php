@@ -1,1 +1,4 @@
-<?php require_once("./routes/routes.php")?>
+<?php
+    require_once("functions.php");
+    require_once("./routes/routes.php")
+?>
