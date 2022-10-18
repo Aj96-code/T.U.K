@@ -5,6 +5,11 @@
         return $productType->getTypes();
     }
 
+    function getProductSizeResult($pdo)
+    {
+        $productSize = new ProductSize($pdo);
+        return $productSize->getSizes();
+    }
     function getProductTypeId(array $productType)
     {
         return $productType["id"];

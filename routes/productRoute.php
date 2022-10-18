@@ -50,6 +50,7 @@
         ob_start();
             require_once("./db/conn/conn.php");
             $result = getProductTypeResult($pdo);
+            $sizes = getProductSizeResult($pdo);
             require_once("./layouts/views/product/product-form.php");
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");
@@ -65,13 +66,10 @@
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");
     });
-    $router->post("/product-list-view", function()
+    $router->post("/product-upload", function()
     {
-        
-        $title = "Products";
         ob_start();
-            require_once("./layouts/views/product/product-list-view.php");
+            require_once("./layouts/views/product/product-upload.php");
         $body = ob_get_clean();
-        require_once("./layouts/shared/template.php");
     });
 ?>
