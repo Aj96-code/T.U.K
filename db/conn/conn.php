@@ -19,6 +19,7 @@
     
         $pdo = new PDO($dsn,$user,$password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
         require_once("db/class/productType.php");
         require_once("db/class/productSize.php");
         require_once("db/class/product.php");

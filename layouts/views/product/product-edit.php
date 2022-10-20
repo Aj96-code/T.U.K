@@ -27,7 +27,7 @@
         }
 
         $product = new Product($pdo);
-        $isEdited = $product->editProduct($id,$_POST["name"],$_POST["detail"],$_POST["price"],
+        $isEdited = $product->editProduct($_POST["id"],$_POST["name"],$_POST["detail"],$_POST["price"],
                         $_POST["color"], $image ,$_POST["type"],$_POST["size"],$_POST["inStock"]);
 
 
