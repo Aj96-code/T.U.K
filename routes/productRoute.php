@@ -5,8 +5,9 @@
 
         ob_start();
 
-        require_once("./db/conn/conn.php");
-        $result = getProductTypeResult($pdo);
+            require_once("./db/conn/conn.php");
+            $result = getProductTypeResult($pdo);
+            $products = getProducts($pdo);
             require_once("./layouts/views/product/product-list.php");
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");
@@ -17,8 +18,9 @@
         $title = "Products";
         ob_start();
 
-        require_once("./db/conn/conn.php");
-        $result = getProductTypeResult($pdo);
+            require_once("./db/conn/conn.php");
+            $result = getProductTypeResult($pdo);
+            $products = getProducts($pdo);
             require_once("./layouts/views/product/product-list.php");
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");
@@ -27,8 +29,9 @@
     {
         $title = "Product";
         ob_start();
-        require_once("./db/conn/conn.php");
-        $result = getProductTypeResult($pdo);
+            require_once("./db/conn/conn.php");
+            $result = getProductTypeResult($pdo);
+            $products = getProducts($pdo);
             require_once("./layouts/views/product/product-list.php");
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");

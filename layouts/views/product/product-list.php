@@ -19,17 +19,19 @@
                 </div>
             </div>
         </div>
+        <?php while($obj = $products->fetch(PDO::FETCH_ASSOC)) {?>
         <div class="container d-md-flex flex-row justify-content-md-center align-items-md-center align-content-md-center flex-md-wrap py-5 px-4 container-product-list">
             <div class="card me-md-4 my-md-4 my-2 product" style="width: auto;height: auto;max-width: 400px;">
                 <div class="card-body mx-md-0 me-md-0" style="max-width: 500px;">
-                    <div><img src="assets/img/fashionable-young-bearded-man-oversized-grey-t-shirt-jeans-poses-indoors-against-blank-wall.jpg" style="max-width: 100%;max-height: 244px;"></div>
+                    <div><img src="<?php echo $obj["image"]?>" style="max-width: 100%;max-height: 244px;"></div>
                     <div>
-                        <h4>Product Name</h4>
-                        <h5 class="fw-bold text-muted mb-2">Price</h5>
-                        <div class="d-grid"><button class="btn btn-dark fw-semibold" type="button">View</button></div>
+                        <h4><?php echo $obj["name"]?></h4>
+                        <h5 class="fw-bold text-muted mb-2"><?php echo $obj["price"]?>Price</h5>
+                        <div class="d-grid"><a class="btn btn-dark fw-semibold" href="/product?id=<?php echo $obj["id"]?>" type="button">View</a></div>
                     </div>
                 </div>
             </div>
+        <?php }?>
             <div class="card me-md-4 my-md-4" style="width: auto;height: auto;max-width: 400px;">
                 <div class="card-body mx-md-0 me-md-0" style="max-width: 500px;">
                     <div><img src="assets/img/beautiful-men-fashion-wooden-background.jpg" style="max-width: 100%;max-height: 244px;"></div>
