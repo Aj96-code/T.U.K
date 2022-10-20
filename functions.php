@@ -1,5 +1,10 @@
 <?php
-
+    
+    function getProductById($pdo,$id)
+    {
+        $product = new Product($pdo);
+        return $product->getProductByID($id);
+    }
     function getProducts($pdo)
     {
         $product = new Product($pdo);

@@ -47,9 +47,22 @@
             }
         }
 
-        public function getProductByID()
+        public function getProductByID($id)
         {
+            try
+            {
+                $sql = "SELECT * FROM `product` WHERE id = :id";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindparam(":id", $id);
+                $stmt->execute();
+                return $stmt->fetch(PDO::FETCH_ASSOC);
 
+            }
+            catch(PDOException $exc)
+            {
+                echo $exc->getMessage();
+                return false;
+            }
         }
 
         public function getProducts()

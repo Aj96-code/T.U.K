@@ -37,10 +37,12 @@
         require_once("./layouts/shared/template.php");
     });
 
-    $router->get("/product", function()
+    $router->get("/product?id=", function()
     {
         $title = "Product";
         ob_start();
+            require_once("./db/conn/conn.php");
+            $product = getProductById($pdo,$_GET["id"]);
             require_once("./layouts/views/product/product.php");
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");
