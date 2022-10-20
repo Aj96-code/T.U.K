@@ -1,5 +1,9 @@
 <?php
-    
+    function getUserRoles($pdo)
+    {
+        $userRole = new UserRole($pdo);
+        return $userRole->getRoles();
+    }
     function getProductById($pdo,$id)
     {
         $product = new Product($pdo);
