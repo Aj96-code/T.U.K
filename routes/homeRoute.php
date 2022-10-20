@@ -37,25 +37,14 @@
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");
     });
-    $router->post("/login", function()
+    
+    $router->post("/auth", function()
     {
-        $title = "log In";
-        ob_start(); 
-            $username = $_POST["username"];
-            require_once("./db/conn/conn.php");
-            $vUser = verifyUser($pdo,$username,$_POST["password"]);
-            if(!isset($vUser["username"]))
-            {
-                echo "fail";
-            }
-            else
-            {
-                header("Location: /");
-            }
-            require_once("./layouts/views/home/login.php");
-        $body = ob_get_clean();
-        require_once("./layouts/shared/template.php");
+        ob_start();
+            require_once("./layouts/view/home/auth.php");
+        ob_get_clean();
     });
+
     $router->get("/registration", function()
     {
         $title = "Registration";
