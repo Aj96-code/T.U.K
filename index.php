@@ -1,4 +1,4 @@
 <?php
     require_once("functions.php");
-    require_once("./routes/routes.php")
+    require_once("./routes/routes.php");
 ?>

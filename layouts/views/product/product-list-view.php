@@ -17,15 +17,17 @@
             </tr>
         </thead>
         <tbody class="align-middle" >
+            <?php while($obj = $products->fetch(PDO::FETCH_ASSOC)) {?>
             <tr>
-                <th scope="row">1</th>
-                <td class="text-center">Cell 3</td>
-                <td class="text-center">Cell 4</td>
+                <th scope="row"><?php echo $obj["id"]?></th>
+                <td class="text-center"><?php echo $obj["name"]?></td>
+                <td class="text-center"><?php echo $obj["product_type_id"]?></td>
                 <td class="d-flex justify-content-center">
                     <a class="btn btn-outline-warning m-1" href="#">Edit</a>
                     <a class="btn btn-outline-danger m-1" href="#">Delete</a>
                 </td>
             </tr>
+            <?php }?>
         </tbody>
     </table>
 </div>

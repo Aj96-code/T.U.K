@@ -46,5 +46,24 @@
                 return false;
             }
         }
+
+        public function getProductByID()
+        {
+
+        }
+
+        public function getProducts()
+        {
+            try
+            {
+                $sql = "SELECT * FROM `product`";
+                return $this->db->query($sql);
+            }
+            catch(PDOException $exc)
+            {
+                echo $exc->getMessage();
+                return false;
+            }
+        }
     }
 ?>

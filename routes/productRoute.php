@@ -62,6 +62,8 @@
         
         $title = "Products";
         ob_start();
+            require_once("./db/conn/conn.php");
+            $products = getProducts($pdo);
             require_once("./layouts/views/product/product-list-view.php");
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");

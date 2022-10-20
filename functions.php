@@ -1,4 +1,10 @@
-<?php 
+<?php
+
+    function getProducts($pdo)
+    {
+        $product = new Product($pdo);
+        return $product->getProducts();
+    }
     function getProductTypeResult ($pdo)
     {
         $productType = new ProductType($pdo);
