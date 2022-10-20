@@ -23,8 +23,8 @@
                 <td class="text-center"><?php echo $obj["name"]?></td>
                 <td class="text-center"><?php echo $obj["product_type_id"]?></td>
                 <td class="d-flex justify-content-center">
-                    <a class="btn btn-outline-warning m-1" href="#">Edit</a>
-                    <a class="btn btn-outline-danger m-1" href="#">Delete</a>
+                    <a class="btn btn-outline-warning m-1" href="/product-form-edit?id=<?php echo $obj["id"] ?>">Edit</a>
+                    <a class="btn btn-outline-danger m-1"  href="/product-form-delete?id=<?php echo $obj["id"] ?>">Delete</a>
                 </td>
             </tr>
             <?php }?>

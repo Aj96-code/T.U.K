@@ -54,8 +54,8 @@
         function resolve()
         {
             $methodDictionary = $this->{strtolower($this->request->requestMethod)};
-            $formatedRoute = $this->formatRoute($this->request->requestUri);
-            $method = $methodDictionary[$formatedRoute];
+            $formattedRoute = $this->formatRoute($this->request->requestUri);
+            $method = $methodDictionary[$formattedRoute];
 
             if(is_null($method))
             {

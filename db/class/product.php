@@ -78,5 +78,31 @@
                 return false;
             }
         }
+
+        public function editProduct(          
+            $id,$name,$detail,$price,$color,$image,
+            $productType,$productSize,$inStock
+        )
+        {
+            try
+            {
+                $sql = "UPDATE `product` SET `name` = :name,`detail` = :detail,
+                        `price` = :price,`color` = :color,`image` = :image,
+                        `product_type_id` = :productType,`product_size_id` = :productSize,
+                        `in_stock` = :inStock WHERE `id` = :id" ;
+                $stmt = $this->db->prepare($sql);
+                $this->bindProductsValue($stmt,$name,$detail,$price,
+                    $color,$image,$productType,$productSize,$inStock);
+                $stmt->bindparam(":id",$id);
+                $stmt->execute();
+                return true;
+
+            } 
+            catch (PDOException $exc)
+            {
+                echo $exc->getMessage();
+                return false;
+            }
+        }
     }
 ?>

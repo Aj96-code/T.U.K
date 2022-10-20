@@ -1,6 +1,5 @@
 <?php 
     require_once("./db/conn/conn.php");
-    print_r($_POST);
     if(isset($_POST["submit"]))
     {
         $name =$_FILES["image"]["name"];
@@ -9,7 +8,6 @@
         $imageFileType = strtolower(pathinfo($tarFile,PATHINFO_EXTENSION));
         $extensionArray = array("jpg","jpeg","png","gif");
 
-    echo $imageFileType;
         if(in_array($imageFileType,$extensionArray))
         {
             if(move_uploaded_file($_FILES["image"]["tmp_name"], $tarDir.$name))
