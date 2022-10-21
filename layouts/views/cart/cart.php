@@ -10,7 +10,7 @@
                                 <div><img class="rounded img-fluid mb-3 mb-md-0 ms-md-2" src="<?php echo $cartItem["image"]?>" height="100%"></div>
                                 <div class="px-lg-4 px-md-2 product-details pe-md-5 mx-md-3">
                                     <h4 class="text-center justify-content-md-center align-items-md-center"><?php echo $product["name"]?></h4>
-                                    <h6 class="text-muted mb-2"><?php echo $cartItem["price"]?></h6>
+                                    <h6 class="text-muted mb-2" id="price<?php echo $cartItem["id"]?>"><?php echo $cartItem["price"]?></h6>
                                     <p style="width: 300px;"><?php echo $cartItem["detail"]?></p>
                                     <div class="d-inline-flex justify-content-md-center  align-items-md-center">
                                         <button  id ="plus<?php echo $cartItem["id"]?>" onclick="plus<?php echo $cartItem['id'] ?>()" class="btn btn-dark fw-bold border rounded mx-md-2 me-1 me-md-1" type="button" style="width: 33.3px;padding: 0px;height: 29px;">+</button>
@@ -36,23 +36,22 @@
                                         <th>Product Name</th>
                                         <th>Qty</th>
                                         <th>Price</th>
+                                        <th>Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    
+                                <?php foreach($cartItems as $cartItem) { ?>
                                     <tr>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
+                                        <td><?php echo $cartItem["name"]?></td>
+                                        <td id="qty<?php echo $cartItem["id"]?>">1</td>
+                                        <td></td>
+                                        <td id="total<?php echo $cartItem["id"] ?>"></td>
                                     </tr>
-                                    <tr>
-                                        <td>Text</td>
-                                        <td>Cell 3</td>
-                                        <td>Cell 4</td>
-                                    </tr>
-                                    <tr></tr>
+                                <?php }?>
                                 </tbody>
                             </table>
                         </div>
-                        <p class="fw-bold">Total</p>
                         <div class="d-grid"><button class="btn btn-dark" type="button">Check Out</button></div>
                     </div>
                 </div>
@@ -62,20 +61,34 @@
 
                 <?php foreach($cartItems as $cartItem) { $id = $cartItem["id"]; ?>
                     let amount<?php echo $id?> = document.getElementById("amount<?php echo $id;?>");
-                    console.log(amount<?php echo $id?>);
+                    let price<?php echo $id?> = document.getElementById("price<?php echo $id;?>");
+                    let sum<?php echo $id?>;
+                    let total<?php echo $id?> = document.getElementById("total<?php echo $id?>");
+                    let qty<?php echo $id?> = document.getElementById("qty<?php echo $id?>");
                     function plus<?php echo $id?>()
                     {
                         if( amount<?php echo $id?>.value < <?php echo $cartItem["in_stock"]?> )
-                            amount<?php echo $id?>.value ++; 
+                        {
+                            amount<?php echo $id?>.value ++;  
+                            qty<?php echo $id?>.innerHTML = amount<?php echo $id?>.value;
+                            price<?php echo $id?>.innerText = ("<?php echo $cartItem["price"]?>").replace("$","")* amount<?php echo $id?>.value;
+                            sum<?php echo $id?> = price<?php echo $id?>.innerText;  
+                            total<?php echo $id?>.innerHTML = sum<?php echo $id?>;
+                        }
                     }
                     function minus<?php echo $id?>()
                     {
                         if(amount<?php echo $id?>.value >1 )
                         {
                             amount<?php echo $id?>.value--;                             
+                            qty<?php echo $id?>.innerHTML = amount<?php echo $id?>.value;
+                            price<?php echo $id?>.innerText =  price<?php echo $id?>.innerText - ("<?php echo $cartItem["price"]?>").replace("$","");
+                            sum<?php echo $id?> = price<?php echo $id?>.innerText;  
+                            total<?php echo $id?>.innerHTML =  sum<?php echo $id?>;
                         }
 
                     }
+
 
 
                 <?php }?>

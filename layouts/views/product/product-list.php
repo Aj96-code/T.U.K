@@ -26,7 +26,7 @@
                     <div><img src="<?php echo $obj["image"]?>" style="max-width: 100%;max-height: 244px;"></div>
                     <div>
                         <h4><?php echo $obj["name"]?></h4>
-                        <h5 class="fw-bold text-muted mb-2"><?php echo $obj["price"]?>Price</h5>
+                        <h5 class="fw-bold text-muted mb-2">Price: &nbsp;<?php echo $obj["price"]?></h5>
                         <div class="d-grid"><a class="btn btn-dark fw-semibold" href="/product?id=<?php echo $obj["id"] ?>" type="button">View</a></div>
                     </div>
                 </div>
