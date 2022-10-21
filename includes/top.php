@@ -8,5 +8,7 @@
     <title><?php echo $title?></title>
 </head>
 <body>
-    <?php echo file_get_contents("./components/navbar.html",true)?>
+    <?php 
+        require_once("./components/navbar.php");
+    ?>
     

@@ -41,8 +41,19 @@
     $router->post("/auth", function()
     {
         ob_start();
-            require_once("./layouts/view/home/auth.php");
+            $user = null;
+            if(isset($_POST["username"]))
+            {
+                require_once("./db/conn/conn.php");
+                $user = verifyUser($pdo,$_POST["username"],$_POST["password"]);
+            }
         ob_get_clean();
+        require_once("./layouts/views/home/auth.php");
+    });
+
+    $router->get("/logout",function()
+    {
+        require_once("./layouts/views/home/logout.php");
     });
 
     $router->get("/registration", function()
