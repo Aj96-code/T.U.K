@@ -18,7 +18,10 @@
                             <p><strong class="text-muted">Price:</strong>&nbsp;<?php echo $product["price"]?></p>
                             <p><strong class="text-muted">Size:&nbsp;</strong><?php echo $product["product_size_id"]?></p>
                             <p><strong class="text-muted">Color:&nbsp;</strong><?php echo $product["color"]?></p>
-                            <div class="d-grid"><button class="btn btn-dark fw-semibold my-md-4 mt-md-3 mx-xl-4 mx-lg-3 mx-4 my-2" type="button">Add to Cart</button></div>
+                            <div class="d-grid">
+                                <a href="/cart?id=<?php echo $product["id"]?>" class="btn btn-dark fw-semibold my-md-4 mt-md-3 mx-xl-4 mx-lg-3 mx-4 my-2" 
+                                type="button">Add to Cart</a>
+                            </div>
                         </div>
                     </div>
                 </div>
