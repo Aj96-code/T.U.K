@@ -65,6 +65,22 @@
         require_once("./layouts/shared/template.php");
     });
 
+    $router->post("/addUser", function()
+    {
+        ob_start();
+            if(isset($_POST["submit"]))
+            {   
+                require_once("./db/conn/conn.php");
+                if(getUserByUserAsCount($pdo,$_POST["username"]) > 0)
+                {
+                    echo "username already in use";
+                    header("Location: /registration");
+                }
+            }
+        ob_get_clean();
+        require_once("./layouts/views/home/addUser.php");
+    });
+
     $router->get("/about", function()
     {
         $title = "About";

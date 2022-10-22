@@ -45,8 +45,8 @@
                                     <tr>
                                         <td><?php echo $cartItem["name"]?></td>
                                         <td id="qty<?php echo $cartItem["id"]?>">1</td>
-                                        <td></td>
-                                        <td id="total<?php echo $cartItem["id"] ?>"></td>
+                                        <td><?php echo $cartItem["price"]?></td>
+                                        <td id="total<?php echo $cartItem["id"] ?>"><?php echo $cartItem["price"]?></td>
                                     </tr>
                                 <?php }?>
                                 </tbody>

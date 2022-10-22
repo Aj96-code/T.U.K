@@ -43,6 +43,11 @@
         return md5($str);
     }
 
+    function getUserByUserAsCount($pdo,$username)
+    {
+        $user = new User($pdo);
+        return $user->getUserByUserNameAsNum($username);
+    }
     function verifyUser($pdo,string $username, string $userPassword)
     {
         $user = new User($pdo);
