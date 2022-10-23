@@ -79,6 +79,22 @@
             }
         }
 
+        public function getProductsByTypeId($id)
+        {
+            try
+            {
+                $sql = "SELECT * FROM product WHERE product_type_id = :id";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindparam(":id",$id);
+                $stmt->execute();
+                return $stmt;
+            } 
+            catch(PDOException $exc)
+            {
+                echo $exc->getMessage();
+            }
+        }
+
         public function editProduct(          
             $id,$name,$detail,$price,$color,$image,
             $productType,$productSize,$inStock

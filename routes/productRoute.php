@@ -31,7 +31,8 @@
         ob_start();
             require_once("./db/conn/conn.php");
             $result = getProductTypeResult($pdo);
-            $products = getProducts($pdo);
+            $products = getProductsByTypeId($pdo,$_GET["id"]);
+
             require_once("./layouts/views/product/product-list.php");
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");

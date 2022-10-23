@@ -4,6 +4,11 @@
         $userRole = new UserRole($pdo);
         return $userRole->getRoles();
     }
+    function getProductsByTypeId($pdo, $id)
+    {
+        $product = new Product($pdo);
+        return $product->getProductsByTypeId($id);
+    }
     function getProductById($pdo,$id)
     {
         $product = new Product($pdo);
