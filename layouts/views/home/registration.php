@@ -8,6 +8,16 @@
                         </div>
                     </div>
                     <div class="row d-flex justify-content-center">
+                            <?php
+                                session_start();
+                                    if(isset($_SESSION["errorMessage"]))
+                                    {
+                                        $errorMessage = $_SESSION["errorMessage"];
+                                        require_once("./layouts/shared/error.php");
+                                    }
+                                session_destroy();
+                            ?>
+
                         <div class="col-md-11 col-lg-8 col-xl-8 col-xxl-8">
                             <div class="card mb-5">
                                 <div class="card-body d-flex flex-column align-items-center">

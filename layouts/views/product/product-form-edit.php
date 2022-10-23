@@ -1,6 +1,15 @@
 <section>
         <form class="my-md-3 mb-4" method="post" action="/product-edit" enctype="multipart/form-data">
             <h1 class="text-center mb-md-3">Product Form</h1>
+            <?php 
+                session_start();
+                if(isset($_SESSION["errorMessage"]))
+                {
+                    $errorMessage = $_SESSION["errorMessage"];
+                    require_once("./layouts/shared/error.php");
+                }
+                session_destroy();
+            ?>
             <input hidden name="id" value="<?php echo $product["id"] ?>"/>
             <div class="mx-md-5 my-md-2">
                 <div class="container">

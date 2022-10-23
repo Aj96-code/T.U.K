@@ -73,7 +73,9 @@
                 require_once("./db/conn/conn.php");
                 if(getUserByUserAsCount($pdo,$_POST["username"]) > 0)
                 {
-                    echo "username already in use";
+                    session_start();
+                    session_regenerate_id();
+                    $_SESSION["errorMessage"] = "<b>Username</b> already in use";
                     header("Location: /registration");
                 }
             }

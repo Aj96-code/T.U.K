@@ -10,7 +10,9 @@
     }
     else
     {
-        echo "error";
+        session_start();
+        $_SESSION["errorMessage"] = "User was not added";
+        header("Location: /registration");
     }
 
 ?>

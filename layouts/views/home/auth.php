@@ -11,6 +11,7 @@
     }
     else
     {
+        $_SESSION["errorMessage"] = "Incorrect <b>Username or Password</b>";
         header("Location: /login");
     }
 

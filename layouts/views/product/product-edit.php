@@ -38,7 +38,9 @@
         }
         else
         {
-            echo "Error";
+            session_start();
+            $_SESSION["errorMessage"] = "Product Information failed to update";
+            header("Location: /product-form-edit?id=".$_POST["id"]);
         }
     }
 ?>

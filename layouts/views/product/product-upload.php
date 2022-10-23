@@ -16,11 +16,32 @@
                  $image = "data:image/$imageFileType;base64,$imageBase64";
 
                  $product = new Product($pdo);
-                 $product->insertProduct($_POST["name"],$_POST["detail"],$_POST["price"],
-                        $_POST["color"], $image,$_POST["type"],$_POST["size"],$_POST["inStock"]);
+                 $added = $product->insertProduct($_POST["name"],$_POST["detail"],$_POST["price"],
+                            $_POST["color"], $image,$_POST["type"],$_POST["size"],$_POST["inStock"]);
+                if(empty($added))
+                {
+                    session_start();
+                    $_SESSION["errorMessage"] = "Failed to add Product";
+                    header("Location: /product-form");
+                }
+                else
+                {
+
+                    header("Location: /product-list-view");
+                }
             }
         }
+        else
+        {
+            session_start();
+            $_SESSION["errorMessage"] = "<b>Wrong Image Type;</b> Correct Image Types are <strong>['jpg','jpeg','png','gif']</strong>";
+            header("Location: /product-form");
+        }
 
-        header("Location: /product-list-view");
+
+    }
+    else
+    {
+        header("Location: /");
     }
 ?>
