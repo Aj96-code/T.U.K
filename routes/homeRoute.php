@@ -64,6 +64,14 @@
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");
     });
+    $router->get("/profile", function()
+    {
+        $title = "Registration";
+        ob_start();
+            require_once("./layouts/views/user/profile.php");
+        $body = ob_get_clean();
+        require_once("./layouts/shared/template.php");
+    });
 
     $router->post("/addUser", function()
     {
