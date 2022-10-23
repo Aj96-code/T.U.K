@@ -20,7 +20,8 @@
             </div>
         </div>
         <div class="container d-md-flex flex-row justify-content-md-center align-items-md-center align-content-md-center flex-md-wrap py-5 px-4 container-product-list">
-            <?php while($obj = $products->fetch(PDO::FETCH_ASSOC)) {?>
+        <?php if($products->rowCount()  > 0) {?>    
+        <?php while($obj = $products->fetch(PDO::FETCH_ASSOC)) {?>
             <div class="card me-md-4 my-md-4 my-2 product" style="width: auto;height: auto;max-width: 400px;">
                 <div class="card-body mx-md-0 me-md-0" style="max-width: 500px;">
                     <div><img src="<?php echo $obj["image"]?>" style="max-width: 100%;max-height: 244px;"></div>
@@ -31,6 +32,11 @@
                     </div>
                 </div>
             </div>
+            <?php }?>
+            <?php }
+                else {
+            ?>
+                <h1 class=" text-center text-muted"style=" font-size: 5em;">Coming Soon ....</h1>
             <?php }?>
         </div> 
     </section>
