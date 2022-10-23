@@ -36,7 +36,7 @@
             <?php }
                 else {
             ?>
-                <h1 class=" text-center text-muted"style=" font-size: 5em;">Coming Soon ....</h1>
+                <h1 class=" text-center text-muted"style=" font-size: 5em;">Nothing Found ....</h1>
             <?php }?>
         </div> 
     </section>

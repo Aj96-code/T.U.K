@@ -54,10 +54,25 @@
         
         $title = "Add Product";
         ob_start();
-            require_once("./db/conn/conn.php");
-            $result = getProductTypeResult($pdo);
-            $sizes = getProductSizeResult($pdo);
-            require_once("./layouts/views/product/product-form.php");
+            session_start();
+            if(isset($_SESSION["role"]))
+            {
+                if($_SESSION["role"] == "admin")
+                {
+                    require_once("./db/conn/conn.php");
+                    $result = getProductTypeResult($pdo);
+                    $sizes = getProductSizeResult($pdo);
+                    require_once("./layouts/views/product/product-form.php");                   
+                }
+                else
+                {
+                    header("Location: /login");
+                }
+            }
+            else
+            {
+                header("Location: /login");
+            }
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");
 
@@ -68,11 +83,26 @@
         
         $title = "Edit Product";
         ob_start();
-            require_once("./db/conn/conn.php");
-            $result = getProductTypeResult($pdo);
-            $sizes = getProductSizeResult($pdo);
-            $product = getProductById($pdo,$_GET["id"]);
-            require_once("./layouts/views/product/product-form-edit.php");
+        session_start();
+            if(isset($_SESSION["role"]))
+            {
+                if($_SESSION["role"] == "admin")
+                {
+                    require_once("./db/conn/conn.php");
+                    $result = getProductTypeResult($pdo);
+                    $sizes = getProductSizeResult($pdo);
+                    $product = getProductById($pdo,$_GET["id"]);
+                    require_once("./layouts/views/product/product-form-edit.php");
+                }
+                else
+                {
+                    header("Location: /login");
+                }
+            }
+            else
+            {
+                header("Location: /login");
+            }
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");
 
@@ -81,7 +111,22 @@
     $router->post("/product-edit", function()
     {
         ob_start();
-            require_once("./layouts/views/product/product-edit.php");
+            session_start();
+            if(isset($_SESSION["role"]))
+            {
+                if($_SESSION["role"] == "admin")
+                {
+                    require_once("./layouts/views/product/product-edit.php");
+                }
+                else
+                {
+                    header("Location: /login");
+                }
+            }
+            else
+            {
+                header("Location: /login");
+            }
         ob_get_clean();
     });
 
@@ -91,16 +136,46 @@
         
         $title = "Products";
         ob_start();
-            require_once("./db/conn/conn.php");
-            $products = getProducts($pdo);
-            require_once("./layouts/views/product/product-list-view.php");
+            session_start();
+            if(isset($_SESSION["role"]))
+            {
+                if($_SESSION["role"] == "admin")
+                {
+                    require_once("./db/conn/conn.php");
+                    $products = getProducts($pdo);
+                    require_once("./layouts/views/product/product-list-view.php");
+                }
+                else
+                {
+                    header("Location: /login");
+                }
+            }
+            else
+            {
+                header("Location: /login");
+            }
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");
     });
     $router->post("/product-upload", function()
     {
         ob_start();
-            require_once("./layouts/views/product/product-upload.php");
+        session_start();
+            if(isset($_SESSION["role"]))
+            {
+                if($_SESSION["role"] == "admin")
+                {
+                    require_once("./layouts/views/product/product-upload.php");
+                }
+                else
+                {
+                    header("Location: /login");
+                }
+            }
+            else
+            {
+                header("Location: /login");
+            }
         ob_get_clean();
     });
 ?>
