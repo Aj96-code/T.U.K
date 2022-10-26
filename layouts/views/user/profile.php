@@ -37,6 +37,7 @@
                     </div>
                     <div class="col-md-12 mb-2">
                         <select class="form-select" name="gender" aria-label="Default select example">
+                            <option selected >Choose Gender</option>
                             <option <?php if($user["gender"] === "Male" ) echo "selected";?> >Male</option>
                             <option <?php if($user["gender"] === "Female" ) echo "selected";?> >Female</option>
                         </select>
