@@ -25,11 +25,11 @@
                 <div class="row mt-3">
                     <div class="col-md-12 mb-2">
                         <label class="labels">Password</label>
-                        <input type="text" class="form-control" anme="password" value="">
+                        <input type="password" class="form-control" anme="password" value="">
                     </div>
                     <div class="col-md-12 mb-2">
                         <label class="labels">Confirm Password</label>
-                        <input type="text" class="form-control" name="confirmPassword"  value="">
+                        <input type="password" class="form-control" name="confirmPassword"  value="">
                     </div>
                     <div class="col-md-12 mb-2">
                         <label class="labels">Username</label>
