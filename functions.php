@@ -48,6 +48,11 @@
         return md5($str);
     }
 
+    function getUserByUsername($pdo, $username)
+    {
+        $user = new User($pdo);
+        return $user->getUserByUsername($username);
+    } 
     function getUserByUserAsCount($pdo,$username)
     {
         $user = new User($pdo);

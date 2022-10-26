@@ -8,12 +8,19 @@
             $this->db = $conn;
         }
 
-        function bindUserValues($stmt,$username,$email,$password,$role)
+        function bindUserValues(
+            $stmt,$username,$email,$password,$role,$image,
+             $firstName, $lastName, $gender
+        )
         {
             $stmt->bindparam(":username",$username);
             $stmt->bindparam(":email",$email);
             $stmt->bindparam(":password",$password);
             $stmt->bindparam(":role",$role);
+            $stmt->bindparam(":image",$image);
+            $stmt->bindparam(":firstName", $firstName);
+            $stmt->bindparam(":lastName", $lastName);
+            $stmt->bindparam(":gender", $gender);
         }
 
         function encryptString(string $str)
@@ -21,7 +28,8 @@
             return md5($str);
         }
         public function insertUser(
-            string $username,string $email,string $password, int $role = 2
+             string $username, string $email,$password,$role = 2,$image,
+             $firstName, $lastName, $gender
         )
         {
             
@@ -31,13 +39,13 @@
                     return false;
                 else
                 { 
-                    $sql = "INSERT INTO user(username,email,password,user_role_id)
-                            VALUE (:username,:email,:password,:role)";  
+                    $sql = "INSERT INTO user(username,email,password,user_role_id,image,first_name,last_name,gender)
+                            VALUE (:username,:email,:password,:role,:image,:first_name,:last_name,:gender)";  
                     $stmt = $this->db->prepare($sql);
                     $email = strtolower($email);
                     $this->bindUserValues($stmt,$username,$email,
                         $this->encryptString($username.$email.$password),
-                        $role
+                        $role,$image,$firstName, $lastName,$gender
                     );
                     $stmt->execute();
                     return true;
@@ -102,6 +110,41 @@
                 return false;
             }
         }
+
+        public function updateUser( $id,            
+            $username, $email,$password,$role = 2,$image,
+            $firstName, $lastName, $gender)
+        {
+            try
+            {
+                $sql = "UPDATE user SET
+                        username = :username,
+                        email = :email,
+                        password = :password,
+                        user_role_id = :role,
+                        first_name = :firstName,
+                        gender = :gender,
+                        image = :image,
+                        last_name = :lastName
+                        WHERE id = :id";
+
+                $stmt = $this->db->prepare($sql);
+
+                $this->bindUserValues($stmt,$username,$email,
+                    $this->encryptString($username.$email.$password),
+                    $role,$image,$firstName, $lastName,$gender
+                );
+                $stmt->bindparam(":id",$id);
+                $stmt->execute();
+                return true;
+            }
+            catch(PDOException $exc)
+            {
+                echo $exc->getMessage();
+                return false;
+            }
+        }
+
 
 
     }
