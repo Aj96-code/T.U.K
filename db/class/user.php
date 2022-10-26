@@ -3,7 +3,6 @@
     class User
     {
         private $db;
-        private $defaultUserRole = 2;
         function __construct($conn)
         {
             $this->db = $conn;
