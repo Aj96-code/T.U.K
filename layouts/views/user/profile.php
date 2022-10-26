@@ -25,27 +25,29 @@
                 <div class="row mt-3">
                     <div class="col-md-12 mb-2">
                         <label class="labels">Password</label>
-                        <input type="text" class="form-control" value="">
+                        <input type="text" class="form-control" anme="password" value="">
                     </div>
                     <div class="col-md-12 mb-2">
                         <label class="labels">Confirm Password</label>
-                        <input type="text" class="form-control"  value="">
+                        <input type="text" class="form-control" name="confirmPassword"  value="">
                     </div>
                     <div class="col-md-12 mb-2">
                         <label class="labels">Username</label>
-                        <input type="text" class="form-control"  value="<?php echo $user["username"]?>">
+                        <input type="text" class="form-control" name="username"  value="<?php echo $user["username"]?>">
                     </div>
                     <div class="col-md-12 mb-2">
-                        <label class="labels">Gender</label>
-                        <input type="text" class="form-control"  value="<?php echo $user["gender"]?>">
+                        <select class="form-select" name="gender" aria-label="Default select example">
+                            <option <?php if($user["gender"] === "Male" ) echo "selected";?> >Male</option>
+                            <option <?php if($user["gender"] === "Female" ) echo "selected";?> >Female</option>
+                        </select>
                     </div>
                     <div class="col-md-12 mb-2">
                         <label class="labels">Email</label>
-                        <input type="text" class="form-control"  value="<?php echo $user["email"]?>">
+                        <input type="text" class="form-control" name="email"  value="<?php echo $user["email"]?>">
                     </div>
                     <div class="col-md-12 mb-2">
                         <label class="labels">Upload Image</label>
-                        <input type="file" class="form-control form-control-sm" >
+                        <input type="file" name="image" class="form-control form-control-sm" >
                     </div>
                 </div>
                 <div class="d-grid mt-5 text-center">

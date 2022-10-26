@@ -5,10 +5,11 @@
     //TODO: Build out Update Functionality
     if(isset($_POST["submit"]))
     {
-        echo "Here";
+        print_r($_POST);
     }
     else
     {
+        //TODO: Complete Error Message
         echo "error";
     }
 
