@@ -8,7 +8,10 @@
     <title><?php echo $title?></title>
 </head>
 <body>
-    <?php 
+    <?php
+     
+        session_start();
         require_once("./components/navbar.php");
+
     ?>
     

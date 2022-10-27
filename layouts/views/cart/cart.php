@@ -7,7 +7,7 @@
                     <div class="col-md-12 px-xxl-3 mx-xxl-0 mx-md-2 me-lg-0 pe-lg-0" style="padding: op;">
                         <div class="card my-md-3 my-3">
                             <div class="card-body d-md-flex py-md-0 px-md-0 my-sm-2">
-                                <div><img class="rounded img-fluid mb-3 mb-md-0 ms-md-2" src="<?php echo $cartItem["image"]?>" height="100%"></div>
+                                <div><img class="rounded img-fluid mb-3 mb-md-0 ms-md-2" src="<?php echo $cartItem["image"]?>" alt="Product Image" height="100%"></div>
                                 <div class="px-lg-4 px-md-2 product-details pe-md-5 mx-md-3">
                                     <h4 class="text-center justify-content-md-center align-items-md-center"><?php echo $product["name"]?></h4>
                                     <h6 class="text-muted mb-2" id="price<?php echo $cartItem["id"]?>"><?php echo $cartItem["price"]?></h6>

@@ -40,7 +40,7 @@
                 else
                 { 
                     $sql = "INSERT INTO user(username,email,password,user_role_id,image,first_name,last_name,gender)
-                            VALUE (:username,:email,:password,:role,:image,:first_name,:last_name,:gender)";  
+                            VALUE (:username,:email,:password,:role,:image,:firstName,:lastName,:gender)";  
                     $stmt = $this->db->prepare($sql);
                     $email = strtolower($email);
                     $this->bindUserValues($stmt,$username,$email,

@@ -5,7 +5,7 @@
     //TODO: Build out Update Functionality
     if(isset($_POST["submit"]))
     {
-        print_r($_POST);
+        
     }
     else
     {

@@ -7,8 +7,8 @@
                 {
                     $errorMessage = $_SESSION["errorMessage"];
                     require_once("./layouts/shared/error.php");
+                    session_destroy();
                 }
-                session_destroy();
             ?>
             <input hidden name="id" value="<?php echo $product["id"] ?>"/>
             <div class="mx-md-5 my-md-2">

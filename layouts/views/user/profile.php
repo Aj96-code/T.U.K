@@ -1,4 +1,5 @@
 <form action="/update-profile" method="post" enctype="multipart/form-data">
+    <?php echo $user["last_name"]?>
 <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
         <div class="col-md-3 border-right">
@@ -37,7 +38,7 @@
                     </div>
                     <div class="col-md-12 mb-2">
                         <label class="labels">Gender</label>
-                        <select class="form-select" name="gender" aria-label="Default select example">
+                        <select class="form-select form-select-sm" name="gender" aria-label="Default select example">
                             <option <?php if($user["gender"] === "Male" ) echo "selected";?> >Male</option>
                             <option <?php if($user["gender"] === "Female" ) echo "selected";?> >Female</option>
                         </select>

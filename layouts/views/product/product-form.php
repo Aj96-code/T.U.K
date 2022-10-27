@@ -7,8 +7,9 @@
                     {
                         $errorMessage = $_SESSION["errorMessage"];
                         require_once("./layouts/shared/error.php");
+                        session_destroy();
                     }
-                session_destroy();
+
             
             ?>
             <div class="mx-md-5 my-md-2">

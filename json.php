@@ -62,10 +62,10 @@
         if(isset($product["id"]))
         {
             $amount = array("amount"=>1);
-            $cartItem = array_merge($product,$amount);
+            $cartItems = array_merge($product,$amount);
         
             file_put_contents("userCart/".$objUser["password"].".json",
-                "[".json_encode($cartItem)."]");
+                "[".json_encode($cartItems)."]");
         }
     }
 
