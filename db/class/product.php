@@ -79,6 +79,20 @@
             }
         }
 
+
+        public function getProductsAsNum()
+        {
+            try
+            {
+                $sql = "SELECT COUNT(*) as num FROM `product`";
+                return $this->db->query($sql);
+            }
+            catch(PDOException $exc)
+            {
+                echo $exc->getMessage();
+                return false;
+            }
+        }
         public function getProductsByTypeId($id)
         {
             try

@@ -93,6 +93,34 @@
             } 
        }
 
+       public function getUsersAsNum()
+       {
+            try
+            {
+                $sql = "SELECT COUNT(*) as num FROM user";
+                return $this->db->query($sql);
+            }
+            catch(PDOException $exc)
+            {
+                echo $exc->getMessage();
+                return false;
+            }
+       }
+
+       public function getUsers()
+       {     
+            try
+            {
+                $sql = "SELECT * FROM user";
+                return $this->db->query($sql);
+            }
+            catch(PDOException $exc)
+            {
+                echo $exc->getMessage();
+                return false;
+            }
+        
+       }
         public function getUser($username, $password)
         {
             try 
