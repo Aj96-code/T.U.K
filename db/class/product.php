@@ -120,5 +120,22 @@
                 return false;
             }
         }
+
+        public function deleteProduct($id)
+        {
+            try
+            {
+                $sql = "DELETE FROM product WHERE id = :id";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindparam(":id",$id);
+                $stmt->execute();
+                return true;
+            }
+            catch(PDOException $exc)
+            {
+                echo $exc->getMessage();
+                return false;
+            }
+        }
     }
 ?>

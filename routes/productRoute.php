@@ -108,6 +108,35 @@
 
     });
 
+    $router->get("/product-delete?id=",function()
+    {        
+        ob_start();
+        session_start();
+            if(isset($_SESSION["role"]))
+            {
+                if($_SESSION["role"] == "admin")
+                {
+                    require_once("./db/conn/conn.php");
+                    $product= new Product($pdo);
+                    $result = $product->deleteProduct($_GET["id"]);
+                    if($result)
+                    {
+                        header("Location: /product-list-view");
+                    }    
+                }
+                else
+                {
+                    header("Location: /product-list-view");
+                }
+            }
+            else
+            {
+                header("Location: /product-list-view");
+            }
+
+
+    });    
+
     $router->post("/product-edit", function()
     {
         ob_start();
