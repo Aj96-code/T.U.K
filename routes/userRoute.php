@@ -17,4 +17,9 @@
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");
     });
+
+    $router->post("/update-profile",function()
+    {
+        require_once("./layouts/views/user/update-profile.php");
+    });
 ?>

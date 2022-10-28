@@ -11,6 +11,15 @@
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 >Profile Settings</h4>
+                <?php 
+                    session_start();
+                    if(isset($_SESSION["errorMessage"]))
+                    {
+                        $errorMessage = $_SESSION["errorMessage"];
+                        require_once("./layouts/shared/error.php");
+                        session_destroy();
+                    }
+                ?>
                 </div>
                 <div class="row mt-2">
                     <div class="col-md-6">
