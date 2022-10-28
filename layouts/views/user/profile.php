@@ -1,5 +1,4 @@
 <form action="/update-profile" method="post" enctype="multipart/form-data">
-    <?php echo $user["last_name"]?>
 <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
         <div class="col-md-3 border-right">
