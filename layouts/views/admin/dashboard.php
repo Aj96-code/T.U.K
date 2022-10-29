@@ -11,16 +11,14 @@
     <div class="card m-2" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">Products</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">Current Products Count [ <?php echo $productCount->fetch(PDO::FETCH_ASSOC)["num"]?> ]</p>
+            <p class="card-text">Current Products Count [<strong> <?php echo $productCount->fetch(PDO::FETCH_ASSOC)["num"]?> </strong>]</p>
             <a href="product-list-view" class="btn btn-dark">Product Table</a>
         </div>
     </div>
     <div class="card m-2" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">Users</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">Current Users Count [ <?php echo $userCount->fetch(PDO::FETCH_ASSOC)["num"]?> ]</p>
+            <p class="card-text">Current Users Count [<strong> <?php echo $userCount->fetch(PDO::FETCH_ASSOC)["num"]?></strong> ]</p>
             <a href="user-list-view" class="btn btn-dark">User Table</a>
         </div>
     </div>

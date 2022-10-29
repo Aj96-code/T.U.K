@@ -8,6 +8,7 @@
         $_SESSION["name"] = $user["username"];
         $_SESSION["id"] = $user["id"];
         $_SESSION["role"] = $user["user_role_id"] == 1 ? "admin" : "customer";
+        $_SESSION["password"] = $_POST["password"];
         if($_SESSION["role"] == "admin")
         {
             header("Location: /dashboard");

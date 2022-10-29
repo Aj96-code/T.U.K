@@ -15,7 +15,7 @@
             $imageBase64 = base64_encode(file_get_contents("defaultImages/DefaultMaleImage.png"));
             $image = empty($dbUser1["image"]) ? "data:image/$imageFileType;base64,$imageBase64" : $dbUser1["image"];
             $updated = $user->updateUser( $_SESSION["id"],            
-                    $_POST["username"], $_POST["email"],$_POST["password"],$dbUser1["user_role_id"],$image,
+                    $_POST["username"], $_POST["email"],$_SESSION["password"],$dbUser1["user_role_id"],$image,
                     $_POST["firstName"], $_POST["lastName"], $_POST["gender"]);
                     
 
@@ -45,7 +45,7 @@
                     $image = "data:image/$imageFileType;base64,$imageBase64";
                     
                     $updated = $user->updateUser( $_SESSION["id"],            
-                    $_POST["username"], $_POST["email"],$_POST["password"],$dbUser1["user_role_id"],$image,
+                    $_POST["username"], $_POST["email"],$_SESSION["password"],$dbUser1["user_role_id"],$image,
                     $_POST["firstName"], $_POST["lastName"], $_POST["gender"]);
                     
 
