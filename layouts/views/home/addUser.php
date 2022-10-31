@@ -42,7 +42,7 @@
     else
     {
         session_start();
-        $_SESSION["errorMessage"] = "User was not added";
+        $_SESSION["errorMessage"] = "User with same username or email is already in the system";
         header("Location: /registration");
     }
 ?>

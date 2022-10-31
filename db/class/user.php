@@ -35,7 +35,8 @@
             
             try 
             {
-                if($this->getUserByUserNameAsNum($username)["num"] > 0 )
+                if($this->getUserByUserNameAsNum($username)["num"] > 0 
+                   && $this->getUserByEmailAsNum($email) > 0)
                     return false;
                 else
                 { 
@@ -65,6 +66,22 @@
                 $sql = "SELECT COUNT(*) AS num FROM user WHERE username = :username";
                 $stmt = $this->db->prepare($sql);
                 $stmt->bindparam(":username",$username);
+                $stmt->execute();
+                return $stmt->fetch(PDO::FETCH_ASSOC);
+                
+            } catch (PDOException $exc) 
+            {
+                echo $exc->getMessage();
+                return false;
+            } 
+        }
+        public function getUserByEmailAsNum($email)
+        {
+              try
+            {
+                $sql = "SELECT COUNT(*) AS num FROM user WHERE email = :email";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindparam(":email",$email);
                 $stmt->execute();
                 return $stmt->fetch(PDO::FETCH_ASSOC);
                 
