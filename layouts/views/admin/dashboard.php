@@ -3,8 +3,7 @@
     require_once("./db/conn/conn.php");
     $product = new Product($pdo);
     $user = new User($pdo);
-    $productCount = $product->getProductsAsNum()
-    ;
+    $productCount = $product->getProductsAsNum();
     $userCount = $user->getUsersAsNum();
 ?>
 <div class="container d-md-flex flex-row justify-content-md-center align-items-md-center align-content-md-center flex-md-wrap py-5 px-4 container-product-list">

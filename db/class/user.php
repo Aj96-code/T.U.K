@@ -139,6 +139,22 @@
             }
         }
 
+        public function getUserById($id)
+        {
+            try
+            {
+                $sql = "SELECT * FROM user WHERE id = :id";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindparam(":id",$id);
+                $stmt->execute();
+                return $stmt;
+            } 
+            catch(PDOException $exc)
+            {
+                echo $exc->getMessage();
+            }
+        }
+
         public function updateUser( $id,            
             $username, $email,$password,$role = 2,$image,
             $firstName, $lastName, $gender)
