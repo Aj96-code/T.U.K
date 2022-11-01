@@ -1,6 +1,6 @@
 
 <section>
-        <form class="my-md-3 mb-4" method="post" action="/product-edit" enctype="multipart/form-data">
+        <form class="my-md-3 mb-4" method="post" action="/user-edit" enctype="multipart/form-data">
             <h1 class="text-center mb-md-3">Product Form</h1>
             <?php 
                 session_start();
@@ -8,10 +8,18 @@
                 {
                     $errorMessage = $_SESSION["errorMessage"];
                     require_once("./layouts/shared/error.php");
-                    session_destroy();
+                }
+            ?>
+            <?php 
+                session_start();
+                if(isset($_SESSION["success"]))
+                {
+                    $successMessage = $_SESSION["success"];
+                    require_once("./layouts/shared/success.php");
                 }
             ?>
             <input hidden name="id" value="<?php echo $userdb["id"] ?>"/>
+            <input hidden name="email" value="<?php echo $userdb["email"] ?>"/>
             <div class="mx-md-5 my-md-2">
                 <div class="container">
                     <div class="row">
@@ -43,7 +51,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2"><label class="col-form-label ms-md-3" for="password">Password:&nbsp;</label></div>
-                        <div class="col-md-7"><input class="form-control my-md-1"  name="password"></div>
+                        <div class="col-md-7"><input class="form-control my-md-1" type="password"  name="password"></div>
                     </div>
                 </div>
             </div>

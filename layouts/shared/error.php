@@ -1,3 +1,3 @@
 <div class="alert alert-danger" role="alert">
-    <?php echo $errorMessage;?>
+   <p class="text-dark text-center"> <?php echo $errorMessage;?> </p>
 </div>

@@ -207,6 +207,61 @@
         }
 
 
+        public function updateUser_Admin( $id,            
+            $username,$email,$password, $firstName,$lastName,$gender)
+        {
+            try
+            {
+                if(!empty($password))
+                {
+
+                    $sql = "UPDATE user SET
+                            username = :username,
+                            password = :password,
+                            first_name = :firstName,
+                            gender = :gender,
+                            last_name = :lastName
+                            WHERE id = :id";
+
+                    $stmt = $this->db->prepare($sql);
+
+                    $newPassword = $this->encryptString($username.$email.$password);
+                    $stmt->bindparam(":username",$username);
+                    $stmt->bindparam(":password",$newPassword);
+                    $stmt->bindparam(":firstName", $firstName);
+                    $stmt->bindparam(":gender",$gender);
+                    $stmt->bindparam(":lastName",$lastName);
+                    $stmt->bindparam(":id",$id);
+                    $stmt->execute();
+                    return true;
+                }
+                else
+                {
+
+                    $sql = "UPDATE user SET
+                            username = :username,
+                            first_name = :firstName,
+                            gender = :gender,
+                            last_name = :lastName
+                            WHERE id = :id";
+
+                    $stmt = $this->db->prepare($sql);
+                    $stmt->bindparam(":username",$username);
+                    $stmt->bindparam(":firstName", $firstName);
+                    $stmt->bindparam(":gender",$gender);
+                    $stmt->bindparam(":lastName",$lastName);
+                    $stmt->bindparam(":id",$id);
+                    $stmt->execute();
+                    return true;
+                }
+            } 
+            catch(PDOException $exc)
+            {
+                echo $exc->getMessage();
+                return false;
+            }
+        }
+
 
     }
 ?>

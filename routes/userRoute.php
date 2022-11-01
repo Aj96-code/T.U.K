@@ -77,5 +77,28 @@
             }
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");
-    })
+    });
+    
+    $router->post("/user-edit", function()
+    {
+        
+            session_start();
+            if(isset($_SESSION["role"]))
+            {
+                if($_SESSION["role"] == "admin")
+                {
+                    require_once("./layouts/views/user/edit-user.php");
+                }
+                else
+                {
+                    header("Location: /login");
+                }
+            }
+            else
+            {
+                header("Location: /login");
+            }
+    });
+
+
 ?>
