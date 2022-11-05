@@ -7,6 +7,7 @@
                 if(isset($_SESSION["errorMessage"]))
                 {
                     $errorMessage = $_SESSION["errorMessage"];
+                    unset($_SESSION["errorMessage"]);
                     require_once("./layouts/shared/error.php");
                 }
             ?>
@@ -15,6 +16,7 @@
                 if(isset($_SESSION["success"]))
                 {
                     $successMessage = $_SESSION["success"];
+                    unset($_SESSION["success"]);
                     require_once("./layouts/shared/success.php");
                 }
             ?>

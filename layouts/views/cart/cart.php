@@ -2,6 +2,14 @@
     <section class="d-lg-flex justify-content-lg-center justify-content-xxl-center align-items-xxl-center mx-lg-5 mx-xxl-5 my-xxl-4 my-lg-4 mt-lg-0">
         <div class="mt-lg-5">
             <div class="container">
+                <?php session_start();
+                    if(isset($_SESSION["successMessage"]))
+                    {
+                        $successMessage = $_SESSION["successMessage"];
+                        unset($_SESSION["successMessage"]);
+                        require_once("./layouts/shared/success.php");
+                    }
+                ?>
                 <?php foreach($cartItems as $cartItem) { ?>
                 <div class="row">
                     <div class="col-md-12 px-xxl-3 mx-xxl-0 mx-md-2 me-lg-0 pe-lg-0" style="padding: op;">
@@ -17,7 +25,7 @@
                                         <input  id = "amount<?php echo $cartItem["id"]?>" type="text" class="me-1" value="<?php echo $cartItem["amount"]; ?>" disabled/>
                                         <button id="minus<?php echo $cartItem["id"]?>" onclick="minus<?php echo $cartItem['id']?>()"class="btn btn-dark fw-bold border rounded" type="button" style="margin: 0px;padding: 0px;width: 33px;height: 30px;">-</button></div>
                                 </div>
-                            </div><a class="fw-bold text-center link-danger" href="cart?rId=<?php echo $cartItem["id"]?>" style="background: #eee9e3;">Remove</a>
+                            </div><a class="fw-bold text-center link-danger" href="cart?rId=<?php echo $cartItem["id"]?>" style="background: #eee9e3;" >  Remove</a></div>
                         </div>
                     </div>
                 </div>
@@ -52,7 +60,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="d-grid"><button class="btn btn-dark" type="button">Check Out</button></div>
+                        <div class="d-grid"><a class="btn btn-dark" href="/check-out" type="button">Check Out</a></div>
                     </div>
                 </div>
             </div>

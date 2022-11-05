@@ -13,7 +13,6 @@
                                 $errorMessage = $_SESSION["errorMessage"];
                                 require_once("./layouts/shared/error.php");
                             }
-                            session_destroy();
                         ?>
                     <form class="text-center" action="/auth" method="post">
                         <div class="mb-3"><input class="form-control" type="text" required name="username" placeholder="User Name"></div>

@@ -17,7 +17,6 @@
                     {
                         $errorMessage = $_SESSION["errorMessage"];
                         require_once("./layouts/shared/error.php");
-                        session_destroy();
                     }
                 ?>
                 </div>

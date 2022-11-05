@@ -62,4 +62,24 @@
             header("Location: login");
         }
     });
+    $router->get("/check-out", function()
+    {
+        session_start();
+        if($_SESSION["loggedIn"])
+        {
+            $title = "Cart";
+            ob_start();
+                require_once("./db/conn/conn.php");
+                $user = new User($pdo);
+                $objUser = $user->getUserByUsername($_SESSION["name"]);
+                require_once("./layouts/views/cart/check-out.php");
+                require_once("./layouts/views/cart/cart.php");
+            $body = ob_get_clean();
+            require_once("./layouts/shared/template.php");
+        }
+        else
+        {
+            header("Location: login");
+        }
+    });
 ?>
