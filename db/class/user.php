@@ -37,7 +37,7 @@
             {
                 if($this->getUserByUserNameAsNum($username)["num"] > 0 
                    && $this->getUserByEmailAsNum($email) > 0)
-                    return false;
+                    return "Username or Email already exist";
                 else
                 { 
                     $sql = "INSERT INTO user(username,email,password,user_role_id,image,first_name,last_name,gender)

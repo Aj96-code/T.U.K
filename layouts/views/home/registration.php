@@ -14,8 +14,8 @@
                                     {
                                         $errorMessage = $_SESSION["errorMessage"];
                                         require_once("./layouts/shared/error.php");
+                                        unset($_SESSION["errorMessage"]);
                                     }
-                                session_destroy();
                             ?>
 
                         <div class="col-md-11 col-lg-8 col-xl-8 col-xxl-8">

@@ -39,10 +39,16 @@
     {
         header("Location: /login");
     }
-    else
+    else if($added =="Username or Email already exist")
     {
         session_start();
         $_SESSION["errorMessage"] = "User with same username or email is already in the system";
+        header("Location: /registration");
+    }
+    else
+    {
+        session_start();
+            $_SESSION["errorMessage"] = "User Could not be Created";
         header("Location: /registration");
     }
 ?>

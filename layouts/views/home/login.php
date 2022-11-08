@@ -12,6 +12,7 @@
                             {
                                 $errorMessage = $_SESSION["errorMessage"];
                                 require_once("./layouts/shared/error.php");
+                                unset($_SESSION["errorMessage"]);
                             }
                         ?>
                     <form class="text-center" action="/auth" method="post">
