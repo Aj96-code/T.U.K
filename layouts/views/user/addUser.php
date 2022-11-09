@@ -1,31 +1,32 @@
-<?php
-
-    require_once("db/conn/conn.php");
+<?php 
+    require_once("./db/conn/conn.php");
     $user = new User($pdo);
+
     if(isset($_POST["submit"]))
     {
         session_start();
         $image = "";
-        require_once("./db/conn/conn.php");
-        $user = new User($pdo);
-        $dbUser1 = $user->getUserByUsername($_SESSION["name"]);
         if($_FILES["image"]["size"] === 0)
         { 
             $imageFileType = strtolower(pathinfo("defaultImages/DefaultMaleImage.png",PATHINFO_EXTENSION));
             $imageBase64 = base64_encode(file_get_contents("defaultImages/DefaultMaleImage.png"));
             $image = empty($dbUser1["image"]) ? "data:image/$imageFileType;base64,$imageBase64" : $dbUser1["image"];
-            $updated = $user->updateUser( $_SESSION["id"],            
-                    $_POST["username"], $_POST["email"],$_SESSION["password"],$dbUser1["user_role_id"],$image,
-                    $_POST["firstName"], $_POST["lastName"], $_POST["gender"]);
-                    
+            $added = $user->insertUser(
+                $_POST["username"],$_POST["email"],
+                $_POST["password"], $_POST["role"],
+                $_POST["image"],$_POST["firstName"],
+                $_POST["lastName"],$_POST["gender"]
+            );
 
-                    if($updated)
+                    if($added)
                     {
-                        header("Location: /profile");
+                        header("Location: /user-list-view");
                     }
                     else
                     {
-                        header("Location: /profile");
+                        session_start();
+                        $_SESSION["errorMessage"] = "Username or Email Already exist";
+                        header("Location: /user-form");
                     }
 
         }
@@ -44,30 +45,35 @@
                     $imageBase64 = base64_encode(file_get_contents($tarDir.$name));
                     $image = "data:image/$imageFileType;base64,$imageBase64";
                     
-                    $updated = $user->updateUser( $_SESSION["id"],            
-                    $_POST["username"], $_POST["email"],$_SESSION["password"],$dbUser1["user_role_id"],$image,
-                    $_POST["firstName"], $_POST["lastName"], $_POST["gender"]);
-                    
+                    $added = $user->insertUser(
+                        $_POST["username"],$_POST["email"],
+                        $_POST["password"], $_POST["role"],
+                        $_POST["image"],$_POST["firstName"],
+                        $_POST["lastName"],$_POST["gender"]
+                    );
 
-                    if($updated)
+                    if($added)
                     {
 
-                        header("Location: /profile");
+                        header("Location: /user-list-view");
                     }
                     else
                     {
-                        $_SESSION["errorMessage"] = "Profile Could Not update";
-                        header("Location: /profile");
+                        $_SESSION["errorMessage"] = "Username or Email already exist";
+                        header("Location: /user-form");
                     }
                 }
             }
             else
             {
                 $_SESSION["errorMessage"] = "Not a Supported file type, Supported File types are (jpg, jpeg, png, gif)";
-                header("Location: /profile");
+                header("Location: /user-form");
             }
         }
     }
-
-
+    else
+    {
+        session_start();
+        $_SESSION["errorMessage"] = "Fail To submit Form";
+    }
 ?>

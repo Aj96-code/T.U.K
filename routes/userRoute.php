@@ -50,6 +50,53 @@
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");
     });
+
+    $router->get("/user-form",function()
+    {
+        $title = "Add User";
+        ob_start();
+        session_start();
+        if(isset($_SESSION["loggedIn"]))
+        {
+            if($_SESSION["role"] == "admin")
+            {
+                require_once("./db/conn/conn.php");
+                $roles = getUserRoles($pdo);
+                require_once("./layouts/views/user/user-form.php");
+            }
+            else
+            {
+                header("Location: /login");
+            }
+        }
+        else
+        {
+            header("Location: /login");
+        }
+        $body = ob_get_clean();
+        require_once("./layouts/shared/template.php");
+    });
+
+    $router->post("/admin-add-user", function()
+    {
+        session_start();
+        if(isset($_SESSION["loggedIn"]))
+        {
+            if($_SESSION["role"] == "admin")
+            {
+                require_once("./layouts/views/user/addUser.php");
+            }
+            else
+            {
+                header("Location: /login");
+            }
+        }
+        else
+        {
+            header("Location: /login");
+        }
+    });
+    
  
     $router->get("/user-edit-form?id=", function()
     {

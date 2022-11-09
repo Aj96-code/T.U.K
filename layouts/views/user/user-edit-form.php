@@ -1,7 +1,7 @@
 
 <section>
         <form class="my-md-3 mb-4" method="post" action="/user-edit" enctype="multipart/form-data">
-            <h1 class="text-center mb-md-3">Product Form</h1>
+            <h1 class="text-center mb-md-3">User Form</h1>
             <?php 
                 session_start();
                 if(isset($_SESSION["errorMessage"]))

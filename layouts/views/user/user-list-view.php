@@ -1,6 +1,11 @@
 
 <h1 class="text-center mt-2">Users</h1>
 <div class="container mt-5 mb-5">
+    <div class ="d-grid">
+        <a class="btn btn-outline-dark fw-semibold  mb-2" href="/user-form">
+            Add <i class="bi bi-plus-circle "></i>
+        </a>
+    </div>
     <table class="table table-light table-striped table-hover">
         <thead class="table-dark">
             <tr>
