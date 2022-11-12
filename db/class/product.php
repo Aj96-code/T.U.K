@@ -65,6 +65,26 @@
             }
         }
 
+        public function getProductBySearchPhrase(string $phrase)
+        {
+            try
+            {
+
+                $sql = "SELECT * FROM `product` WHERE name LIKE :phrase";
+                $stmt = $this->db->prepare($sql);
+                //Use the wildcards '%' get product containing the search phrase;
+                $wildCardPhrase = '%'. $phrase.'%';
+                $stmt->bindparam(":phrase",$wildCardPhrase);
+                $stmt->execute();
+                return $stmt;                
+            }
+            catch (PDOException $exc)
+            {
+                echo $exc->getMessage();
+                return false;
+            }
+        }
+
         public function getProducts()
         {
             try

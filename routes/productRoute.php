@@ -20,7 +20,8 @@
 
             require_once("./db/conn/conn.php");
             $result = getProductTypeResult($pdo);
-            $products = getProducts($pdo);
+            $product = new Product($pdo);
+            $products = $product->getProductBySearchPhrase($_POST["search-phrase"]);
             require_once("./layouts/views/product/product-list.php");
         $body = ob_get_clean();
         require_once("./layouts/shared/template.php");
