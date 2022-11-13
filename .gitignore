@@ -17,3 +17,4 @@ composer.phar
 
 # Built Visual Studio Code Extensions
 *.vsix
+/todos.md
