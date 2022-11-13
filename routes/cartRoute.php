@@ -17,6 +17,7 @@
         }
         else
         {
+            $_SESSION["returnPath"] = "/cart?id=".$_GET["id"]; 
             header("Location: login");
         }
     });
@@ -38,6 +39,7 @@
         }
         else
         {
+            $_SESSION["returnPath"] = "/cart?id=".$_GET["rid"]; 
             header("Location: login");
         }
     });
@@ -59,6 +61,7 @@
         }
         else
         {
+            $_SESSION["returnPath"] = "/cart"; 
             header("Location: login");
         }
     });

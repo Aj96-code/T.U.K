@@ -67,6 +67,7 @@
                 }
                 else
                 {
+                    $_SESSION["returnPath"] = "/product-form"; 
                     header("Location: /login");
                 }
             }
@@ -97,6 +98,7 @@
                 }
                 else
                 {
+                    $_SESSION["returnPath"] = "/product-form-edit?id=".$_GET["id"]; 
                     header("Location: /login");
                 }
             }
@@ -132,6 +134,7 @@
             }
             else
             {
+                $_SESSION["returnPath"] = "/product-delete?id=".$_GET["id"]; 
                 header("Location: /product-list-view");
             }
 
@@ -150,6 +153,7 @@
                 }
                 else
                 {
+                    $_SESSION["returnPath"] = "/product-edit"; 
                     header("Location: /login");
                 }
             }
@@ -177,6 +181,7 @@
                 }
                 else
                 {
+                    $_SESSION["returnPath"] = "/product-list-view"; 
                     header("Location: /login");
                 }
             }
@@ -199,6 +204,7 @@
                 }
                 else
                 {
+                    $_SESSION["returnPath"] = "/product-upload"; 
                     header("Location: /login");
                 }
             }

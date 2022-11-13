@@ -11,11 +11,17 @@
         $_SESSION["password"] = $_POST["password"];
         if($_SESSION["role"] == "admin")
         {
-            header("Location: /dashboard");
+            if(isset($_SESSION["returnPath"]))
+                header("Location: ".$_SESSION["returnPath"]);
+            else
+                header("Location: /dashboard");
         } 
         else
-        {
-            header("Location: /");
+        {      
+            if(isset($_SESSION["returnPath"]))
+                header("Location: ".$_SESSION["returnPath"]);
+            else
+                header("Location: /");
         }
     }
     else
