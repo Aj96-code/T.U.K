@@ -15,7 +15,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2"><label class="col-form-label ms-md-3" for="username">Username:&nbsp;</label></div>
-                        <div class="col-md-7"><input class="form-control my-md-1"
+                        <div class="col-md-7"><input class="form-control my-md-1" required
                             type="text" name="username"></div>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2"><label class="col-form-label ms-md-3" for="firstName">First Name:&nbsp;</label></div>
-                        <div class="col-md-7"><input class="form-control my-md-1" 
+                        <div class="col-md-7"><input class="form-control my-md-1" required
                             type="text" name="firstName"></div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2"><label class="col-form-label ms-md-3" for="lastName">Last Name:&nbsp;</label></div>
-                        <div class="col-md-7"><input class="form-control my-md-1" 
+                        <div class="col-md-7"><input class="form-control my-md-1" required
                             type="text" name="lastName"></div>
                     </div>
                 </div>
@@ -42,8 +42,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2"><label class="col-form-label ms-md-3" for="email">Email:&nbsp;</label></div>
-                        <div class="col-md-7"><input class="form-control my-md-1" 
-                            type="text" name="email"></div>
+                        <div class="col-md-7"><input class="form-control my-md-1" required
+                            type="email" name="email"></div>
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2"><label class="col-form-label ms-md-3" for="password">Password:&nbsp;</label></div>
-                        <div class="col-md-7"><input class="form-control my-md-1" type="password"  name="password"></div>
+                        <div class="col-md-7"><input class="form-control my-md-1" type="password" required  name="password"></div>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                             <label class="col-form-label ms-md-3" for="gender">Gender:&nbsp;</label>
                         </div>
                         <div class="col-md-7">
-                            <select id="type" name="gender" class="form-select form-select-sm my-md-1">
+                            <select id="type" name="gender"  class="form-select form-select-sm my-md-1">
                                 <option  >Male</option>
                                 <option  >Female</option>
                             </select>

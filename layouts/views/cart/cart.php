@@ -10,12 +10,15 @@
                         require_once("./layouts/shared/success.php");
                     }
                 ?>
+                <div class="col">
                 <?php foreach($cartItems as $cartItem) { ?>
                 <div class="row">
                     <div class="col-md-12 px-xxl-3 mx-xxl-0 mx-md-2 me-lg-0 pe-lg-0" style="padding: op;">
                         <div class="card my-md-3 my-3">
                             <div class="card-body d-md-flex py-md-0 px-md-0 my-sm-2">
-                                <div><img class="rounded img-fluid mb-3 mb-md-0 ms-md-2" src="<?php echo $cartItem["image"]?>" alt="Product Image" height="100%"></div>
+                                <div>
+                                    <img class="rounded img-fluid mb-3 mb-md-0 ms-md-2" src="<?php echo $cartItem["image"]?>" alt="Product Image" height="100%">
+                                </div>
                                 <div class="px-lg-4 px-md-2 product-details pe-md-5 mx-md-3">
                                     <h4 class="text-center justify-content-md-center align-items-md-center"><?php echo $product["name"]?></h4>
                                     <h6 class="text-muted mb-2" id="price<?php echo $cartItem["id"]?>"><?php echo $cartItem["price"]?></h6>
@@ -23,15 +26,18 @@
                                     <div class="d-inline-flex justify-content-md-center  align-items-md-center">
                                         <button  id ="plus<?php echo $cartItem["id"]?>" onclick="plus<?php echo $cartItem['id'] ?>()" class="btn btn-dark fw-bold border rounded mx-md-2 me-1 me-md-1" type="button" style="width: 33.3px;padding: 0px;height: 29px;">+</button>
                                         <input  id = "amount<?php echo $cartItem["id"]?>" type="text" class="me-1" value="<?php echo $cartItem["amount"]; ?>" disabled/>
-                                        <button id="minus<?php echo $cartItem["id"]?>" onclick="minus<?php echo $cartItem['id']?>()"class="btn btn-dark fw-bold border rounded" type="button" style="margin: 0px;padding: 0px;width: 33px;height: 30px;">-</button></div>
+                                        <button id="minus<?php echo $cartItem["id"]?>" onclick="minus<?php echo $cartItem['id']?>()"class="btn btn-dark fw-bold border rounded" type="button" style="margin: 0px;padding: 0px;width: 33px;height: 30px;">-</button>
+                                    </div>
                                 </div>
                             </div><a class="fw-bold text-center link-danger" href="cart?rId=<?php echo $cartItem["id"]?>" style="background: #eee9e3;" >  Remove</a></div>
                         </div>
                     </div>
-                </div>
+            
                 <?php }?>
             </div>
+            </div>
         </div>
+                </div>
         <div>
             <div class="container">
                 <div class="row mt-xxl-5 my-md-4 ps-lg-0">
