@@ -26,7 +26,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2"><label class="col-form-label ms-md-3" for="username">Username:&nbsp;</label></div>
-                        <div class="col-md-7"><input class="form-control my-md-1" value="<?php echo $userdb["username"]?>"
+                        <div class="col-md-7"><input class="form-control my-md-1" required  value="<?php echo $userdb["username"]?>"
                             type="text" name="username"></div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2"><label class="col-form-label ms-md-3" for="firstName">First Name:&nbsp;</label></div>
-                        <div class="col-md-7"><input class="form-control my-md-1" value="<?php echo $userdb["first_name"]?>"
+                        <div class="col-md-7"><input class="form-control my-md-1"  required  value="<?php echo $userdb["first_name"]?>"
                             type="text" name="firstName"></div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2"><label class="col-form-label ms-md-3" for="lastName">Last Name:&nbsp;</label></div>
-                        <div class="col-md-7"><input class="form-control my-md-1" value="<?php echo $userdb["last_name"]?>"
+                        <div class="col-md-7"><input class="form-control my-md-1"  required  value="<?php echo $userdb["last_name"]?>"
                             type="text" name="lastName"></div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2"><label class="col-form-label ms-md-3" for="password">Password:&nbsp;</label></div>
-                        <div class="col-md-7"><input class="form-control my-md-1" type="password"  name="password"></div>
+                        <div class="col-md-7"><input class="form-control my-md-1" type="password"  required   name="password"></div>
                     </div>
                 </div>
             </div>

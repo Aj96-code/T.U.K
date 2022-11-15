@@ -15,7 +15,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2"><label class="col-form-label ms-md-3" for="name">Name:&nbsp;</label></div>
-                        <div class="col-md-7"><input class="form-control my-md-1" value="<?php echo $product["name"]?>"
+                        <div class="col-md-7"><input class="form-control my-md-1"  required  value="<?php echo $product["name"]?>"
                             type="text" name="name"></div>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2"><label class="col-form-label ms-md-3" for="price">price:&nbsp;</label></div>
-                        <div class="col-md-7"><input class="form-control my-md-1" type="text" 
+                        <div class="col-md-7"><input class="form-control my-md-1" type="text"  required  
                             value="<?php echo $product["price"]?>" name="price"></div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2"><label class="col-form-label ms-md-3" for="color">Color:&nbsp;</label></div>
-                        <div class="col-md-7"><input class="form-control my-md-1" type="text"  value="<?php echo $product["color"]?>" 
+                        <div class="col-md-7"><input class="form-control my-md-1" type="text"  required   value="<?php echo $product["color"]?>" 
                             name="color"></div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2"><label class="col-form-label ms-md-3" for="inStock">In Stock:&nbsp;</label></div>
-                        <div class="col-md-7"><input class="form-control my-md-1"  value="<?php echo $product["in_stock"]?>" type="number" min="0" name="inStock"></div>
+                        <div class="col-md-7"><input class="form-control my-md-1"  required   value="<?php echo $product["in_stock"]?>" type="number" min="0" name="inStock"></div>
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2"><label class="col-form-label mt-md-3 ms-md-3" for="detail">Details:</label></div>
-                        <div class="col-md-7"><textarea class="form-control form-control-lg mb-3 fs-6"
+                        <div class="col-md-7"><textarea class="form-control form-control-lg mb-3 fs-6" required  
                             name="detail"><?php echo $product["detail"]?></textarea></div>
                     </div>
                 </div>

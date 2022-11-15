@@ -1,3 +1,23 @@
+<?php
+    $type = new ProductType($pdo);
+    $types = array();
+    $result = $type->getTypes();
+    while($obj = $result->fetch(PDO::FETCH_ASSOC))
+    {
+        array_push($types,$obj);
+    }
+
+    function getElement($value,$arr)
+    {
+        foreach($arr as $elem)
+        {
+            if($elem["id"] === $value )
+                return $elem;
+            else
+                continue;
+        }
+    }
+?>
 <h1 class="text-center mt-2">Products</h1>
 <div class="container mt-5 mb-5">
     <div class ="d-grid">
@@ -21,7 +41,7 @@
             <tr>
                 <th scope="row"><?php echo $obj["id"]?></th>
                 <td class="text-center"><?php echo $obj["name"]?></td>
-                <td class="text-center"><?php echo $obj["product_type_id"]?></td>
+                <td class="text-center"><?php echo ucfirst( getElement($obj["product_type_id"],$types)["type"])?></td>
                 <td class="d-flex justify-content-center">
                     <a class="btn btn-outline-warning m-1" href="/product-form-edit?id=<?php echo $obj["id"] ?>">Edit</a>
                     <a class="btn btn-outline-danger m-1" 
