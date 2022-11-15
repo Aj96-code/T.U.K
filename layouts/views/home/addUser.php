@@ -5,7 +5,7 @@
     if($_FILES["image"]["size"] === 0)
     {
 
-        $imageFileType = strtolower(pathinfo("defualtImages/DefaultMaleImage.png",PATHINFO_EXTENSION));
+        $imageFileType = strtolower(pathinfo("defaultImages/DefaultMaleImage.png",PATHINFO_EXTENSION));
         $imageBase64 = base64_encode(file_get_contents("defaultImages/DefaultMaleImage.png"));
         $image = "data:image/$imageFileType;base64,$imageBase64";
     }

@@ -10,11 +10,11 @@
         { 
             $imageFileType = strtolower(pathinfo("defaultImages/DefaultMaleImage.png",PATHINFO_EXTENSION));
             $imageBase64 = base64_encode(file_get_contents("defaultImages/DefaultMaleImage.png"));
-            $image = empty($dbUser1["image"]) ? "data:image/$imageFileType;base64,$imageBase64" : $dbUser1["image"];
+            $image =  "data:image/".$imageFileType.";base64,".$imageBase64;
             $added = $user->insertUser(
                 $_POST["username"],$_POST["email"],
                 $_POST["password"], $_POST["role"],
-                $_POST["image"],$_POST["firstName"],
+                $image,$_POST["firstName"],
                 $_POST["lastName"],$_POST["gender"]
             );
 
@@ -48,7 +48,7 @@
                     $added = $user->insertUser(
                         $_POST["username"],$_POST["email"],
                         $_POST["password"], $_POST["role"],
-                        $_POST["image"],$_POST["firstName"],
+                        $image,$_POST["firstName"],
                         $_POST["lastName"],$_POST["gender"]
                     );
 

@@ -66,6 +66,8 @@
         
             file_put_contents("userCart/".$objUser["password"].".json",
                 "[".json_encode($cartItems)."]");
+            $jsonFileContent = file_get_contents($userCartFile);
+            $cartItems = json_decode($jsonFileContent,true);
         }
     }
 
