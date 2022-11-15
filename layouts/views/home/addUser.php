@@ -37,6 +37,7 @@
     $added = $user->insertUser($_POST["username"],$_POST["email"],$_POST["password"],2,$image,$_POST["firstName"], $_POST["lastName"],$_POST["gender"]);
     if($added)
     {
+        unset($_SESSION["errorMessage"]);
         header("Location: /login");
     }
     else if($added =="Username or Email already exist")
