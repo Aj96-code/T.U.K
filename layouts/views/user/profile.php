@@ -24,17 +24,17 @@
                 <div class="row mt-2">
                     <div class="col-md-6">
                         <label class="form-label">First Name</label>
-                        <input type="text" class="form-control" name="firstName" value="<?php echo $user["first_name"]?>" >
+                        <input type="text" class="form-control" name="firstName"  required  value="<?php echo $user["first_name"]?>" >
                     </div>
                     <div class="col-md-6">
                         <label class="form-label">Last Name</label>
-                        <input type="text" class="form-control" name="lastName" value="<?php echo $user["last_name"]?>" >
+                        <input type="text" class="form-control" name="lastName"  required  value="<?php echo $user["last_name"]?>" >
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-12 mb-2">
                         <label class="labels">Username</label>
-                        <input type="text" class="form-control" name="username"  value="<?php echo $user["username"]?>">
+                        <input type="text" class="form-control" name="username"   required  value="<?php echo $user["username"]?>">
                     </div>
                     <div class="col-md-12 mb-2">
                         <label class="labels">Gender</label>
@@ -45,7 +45,7 @@
                     </div>
                     <div class="col-md-12 mb-2">
                         <label class="labels">Email</label>
-                        <input type="text" class="form-control" name="email"  value="<?php echo $user["email"]?>">
+                        <input type="email" class="form-control" name="email"   required  value="<?php echo $user["email"]?>">
                     </div>
                     <div class="col-md-12 mb-2">
                         <label class="labels">Upload Image</label>
