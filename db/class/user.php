@@ -262,6 +262,21 @@
             }
         }
 
+        public function deleteUser($id)
+        {
+            try
+            {
+                $sql = "DELETE FROM user WHERE id = :id";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindparam(":id",$id);
+                $stmt->execute();  
+                return true;
+            } catch (PdoException $exc)
+            {
+                $exc->getMessage();
+                return false;
+            }
+        }
 
     }
 ?>

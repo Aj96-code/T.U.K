@@ -15,7 +15,7 @@
                                 unset($_SESSION["errorMessage"]);
                             }
                         ?>
-                    <form class="text-center" action="/auth" method="post">
+                    <form class="text-center was-validated" action="/auth" method="post">
                         <div class="mb-3"><input class="form-control" type="text" required name="username" placeholder="User Name"></div>
                         <div class="mb-3"><input class="form-control" type="password" required name="password" placeholder="Password"></div>
                         <div class="mb-3"><button class="btn btn-dark d-block w-100" type="submit">Login</button></div>

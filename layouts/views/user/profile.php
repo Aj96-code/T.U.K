@@ -1,4 +1,4 @@
-<form action="/update-profile" method="post" enctype="multipart/form-data">
+<form action="/update-profile"  class="was-validated" method="post" enctype="multipart/form-data">
 <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
         <div class="col-md-3 border-right">

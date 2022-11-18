@@ -1,7 +1,7 @@
 
-<section>
-        <form class="my-md-3 mb-4" method="post" action="/user-edit" enctype="multipart/form-data">
-            <h1 class="text-center mb-md-3">User Form</h1>
+<section class="mt-5">
+            <h1 class="text-center mb-md-5">User Form</h1>
+        <form class="my-md-3 mb-4 was-validated" method="post" action="/user-edit" enctype="multipart/form-data">
             <?php 
                 session_start();
                 if(isset($_SESSION["errorMessage"]))
@@ -72,10 +72,17 @@
                     </div>
                 </div>
             </div>
-            <div class="mx-md-0">
+            <div >
                 <div class="container d-grid px-md-5">
                     <button name="submit" class="btn btn-dark fw-semibold mx-md-5 my-md-2 ms-md-0" type="submit">Save</button>
                 </div>
             </div>
         </form>
     </section>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>

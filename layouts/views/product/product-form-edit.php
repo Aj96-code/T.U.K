@@ -1,5 +1,5 @@
 <section>
-        <form class="my-md-3 mb-4" method="post" action="/product-edit" enctype="multipart/form-data">
+        <form class="my-md-3 mb-4 was-validated" method="post" action="/product-edit" enctype="multipart/form-data">
             <h1 class="text-center mb-md-3">Product Form</h1>
             <?php 
                 session_start();
