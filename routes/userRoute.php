@@ -147,5 +147,25 @@
             }
     });
 
+    $router->get("/user-delete?id=", function()
+    {
+        session_start();
+        if(isset($_SESSION["role"]))
+        {
+
+            if($_SESSION["role"] == "admin")
+            {
+                require_once("./layouts/views/user/deleteUser.php");
+            }
+            else
+            {
+                header("Location: /login");
+            }
+        }
+        else
+        {
+            header("Location: /login");
+        }
+    });
 
 ?>
