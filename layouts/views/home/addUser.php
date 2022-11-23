@@ -38,6 +38,8 @@
     if($added)
     {
         unset($_SESSION["errorMessage"]);
+       // require_once("sendEmail.php");
+       // SendEmail::SendMail($_POST["email"],"TUK Shopping", "Thanks for Joining Us.");
         header("Location: /login");
     }
     else if($added =="Username or Email already exist")
